@@ -41,11 +41,12 @@ public class CreateAction implements IMenu {
 
                 Scanner pricesc = new Scanner(System.in);
                 int indexprice = pricesc.nextInt();
-                int test2 = s.codePointAt(indexprice);
 
                 ActionWallStreet actionCreate =new ActionWallStreet(actiontake,referencetake);
-                actionCreate.getPriceOpencreate(test2);
 
+                actionCreate.getPriceOpencreate(indexprice);
+
+                action.add(actionCreate);
             }
         }catch (EditingException e){
             System.out.println("this input is not good");

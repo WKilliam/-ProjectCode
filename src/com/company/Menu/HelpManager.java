@@ -12,11 +12,11 @@ public class HelpManager implements IMenu {
         System.out.println("                                 POSSIBLE ORDERS ARE :                                      ");
         System.out.println("********************************************************************************************");
         System.out.println("*                    *                     *                       *                       *");
-        System.out.println("*      USER LIST     *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
-        System.out.println("*      HELP          *    CREATE ACTION    *                       *                       *");
+        System.out.println("*                    *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
+        System.out.println("*      ACTION LIST   *    CREATE ACTION    *                       *                       *");
+        System.out.println("*      USER LIST     *                     *                       *                       *");
+        System.out.println("*      HELP          *                     *                       *                       *");
         System.out.println("*      TO LEAVE      *                     *                       *                       *");
-        System.out.println("*                    *                     *                       *                       *");
-        System.out.println("*                    *                     *                       *                       *");
         System.out.println("********************************************************************************************");
 
     }
