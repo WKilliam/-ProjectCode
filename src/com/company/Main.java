@@ -18,11 +18,12 @@ public class Main {
         User test1 = new User("TEST","V","L",2,19);
         listuser.add(test1);
 
+        IMenu help = new HelpManager();
+        help.helpManager();
+
 
         while (true){
             Scanner sc = new Scanner(System.in);
-            IMenu help = new HelpManager();
-            help.helpManager();
             String input = sc.nextLine();
             FunctionalManager test = new FunctionalManager();
             test.gestionCommande(input,listuser);

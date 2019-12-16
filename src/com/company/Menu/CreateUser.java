@@ -22,6 +22,7 @@ public class CreateUser implements IMenu {
      */
     public void createUsersup(ArrayList<User>userlist){
 
+        IMenu help = new HelpManager();
         try {
             System.out.println("NAME USER :");
             Scanner scname = new  Scanner(System.in);
@@ -45,8 +46,9 @@ public class CreateUser implements IMenu {
             System.out.println("DEPARTEMENT USER( NUMBER ) :");
             Scanner departementUser = new  Scanner(System.in);
             int depart = departementUser.nextInt();
-
-
+            if(depart<0){
+                throw new TextException();
+            }
             System.out.println("OLD USER( NUMBER ONLY) :");
             Scanner old = new  Scanner(System.in);
             int olduser = old.nextInt();
@@ -57,8 +59,19 @@ public class CreateUser implements IMenu {
 
             createUser(sname,surname,functionUser,olduser,depart,userlist);
 
-        }catch (Exception | IdException | OldException e){
-            System.out.println("please fallow instruction ");
+        }catch (OldException old){
+            help.createUsersup(userlist);
+            System.out.println("THIS OLD IS NOT GOOD");
+        }catch (IdException idE){
+            help.createUsersup(userlist);
+            System.out.println("USER EXISTED IN DATA BASE");
+        }catch (TextException e) {
+            help.createUsersup(userlist);
+            System.out.println("you got the wrong touch :"+e.getMessage());
+        }
+        catch (Exception e){
+            help.createUsersup(userlist);
+            System.out.println(" YOUR PROBLEME IS :"+e.getMessage());
         }
     }
 
