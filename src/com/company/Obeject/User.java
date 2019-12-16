@@ -1,4 +1,4 @@
-package com.company;
+package com.company.Obeject;
 
 import com.company.ExceptionProgramme.OldException;
 

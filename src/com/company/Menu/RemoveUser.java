@@ -1,7 +1,9 @@
-package com.company;
+package com.company.Menu;
 
 import com.company.ExceptionProgramme.EditingException;
-import com.company.Menu.IMenu;
+import com.company.ExceptionProgramme.RemoveException;
+import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -29,10 +31,16 @@ public class RemoveUser implements IMenu {
             String surnamevalue = listedemot.get(1);
             for (int i = 0; i <list.size() ; i++) {
                 if (list.get(i).getName().equals(namevalue)&&list.get(i).getSurname().equals(surnamevalue)){
+                    System.out.println(list.get(i).getName() + " "+list.get(i).getSurname()+" is delete ");
                     list.remove(i);
                 }
             }
         }
+
+    }
+
+    @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
 
     }
 

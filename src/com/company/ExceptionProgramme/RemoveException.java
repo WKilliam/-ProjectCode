@@ -1,4 +1,4 @@
-package com.company;
+package com.company.ExceptionProgramme;
 
 public class RemoveException extends Throwable {
     public RemoveException() {

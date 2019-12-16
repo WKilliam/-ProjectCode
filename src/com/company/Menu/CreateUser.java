@@ -2,7 +2,9 @@ package com.company.Menu;
 
 import com.company.ExceptionProgramme.IdException;
 import com.company.ExceptionProgramme.OldException;
-import com.company.User;
+import com.company.ExceptionProgramme.TextException;
+import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.User;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -87,6 +89,11 @@ public class CreateUser implements IMenu {
 
     @Override
     public void removeUser(ArrayList<User> list) {
+
+    }
+
+    @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
 
     }
 

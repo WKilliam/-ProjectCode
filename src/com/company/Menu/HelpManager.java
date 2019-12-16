@@ -1,6 +1,7 @@
 package com.company.Menu;
 
-import com.company.User;
+import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.User;
 
 import java.util.ArrayList;
 
@@ -8,18 +9,20 @@ public class HelpManager implements IMenu {
 
     public void helpManager(){
 
-        System.out.println("      POSSIBLE ORDERS ARE :  ");
-        System.out.println("=============================");
-        System.out.println("=      HELP                 =");
-        System.out.println("=      CREATE USER          =");
-        System.out.println("=      USER LIST            =");
-        System.out.println("=      EDITING USER         =");
-        System.out.println("=      REMOVE USER          =");
-        System.out.println("=      TO LEAVE             =");
-        System.out.println("=============================");
-
+        System.out.println("                                 POSSIBLE ORDERS ARE :                                      ");
+        System.out.println("********************************************************************************************");
+        System.out.println("*                    *                     *                       *                       *");
+        System.out.println("*      USER LIST     *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
+        System.out.println("*      HELP          *    CREATE ACTION    *                       *                       *");
+        System.out.println("*      TO LEAVE      *                     *                       *                       *");
+        System.out.println("*                    *                     *                       *                       *");
+        System.out.println("*                    *                     *                       *                       *");
+        System.out.println("********************************************************************************************");
 
     }
+
+
+
 
     public void helpManagerEditing(ArrayList<User> listuser,int valueselect){
 
@@ -33,6 +36,11 @@ public class HelpManager implements IMenu {
 
     @Override
     public void removeUser(ArrayList<User> list) {
+
+    }
+
+    @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
 
     }
 

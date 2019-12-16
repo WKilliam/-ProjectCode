@@ -1,4 +1,4 @@
-package com.company.Menu;
+package com.company.ExceptionProgramme;
 
 public class TextException extends Throwable {
     public TextException() {
