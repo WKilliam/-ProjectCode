@@ -64,6 +64,11 @@ public class CreateAction implements IMenu {
     }
 
     @Override
+    public void Buy(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
     public void helpManager() {
 
     }

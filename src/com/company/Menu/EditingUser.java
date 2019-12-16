@@ -110,6 +110,11 @@ public class EditingUser implements IMenu {
     }
 
     @Override
+    public void Buy(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
     public void helpManager() {
 
     }

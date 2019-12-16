@@ -18,11 +18,10 @@ public class Main {
 
         ArrayList<User> listuser = new ArrayList<>();
         ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
-
+        ActionWallStreet ac = new ActionWallStreet("MOBILE","FFT");
+        listeAction.add(ac);
         User test1 = new User("TEST","V","L",2,19);
-        User test2 = new User("TET","V","L",2,19);
         listuser.add(test1);
-        listuser.add(test2);
 
         IMenu help = new HelpManager();
         help.helpManager();

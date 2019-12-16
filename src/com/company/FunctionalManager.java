@@ -19,9 +19,10 @@ public class FunctionalManager {
         IMenu editing = new EditingUser();
         IMenu remove = new RemoveUser();
         IMenu actioncre = new CreateAction();
+        IMenu buy = new BuyAction();
         switch (input){
             case"BUY PURCHASEE":
-
+                buy.Buy(action);
                 break;
             case"ACTION LIST":
                 if(action.size()==0){

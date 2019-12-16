@@ -44,6 +44,11 @@ public class HelpManager implements IMenu {
 
     }
 
+    @Override
+    public void Buy(ArrayList<ActionWallStreet> action) {
+
+    }
+
 
     @Override
     public void createUsersup(ArrayList<User> userlist) {

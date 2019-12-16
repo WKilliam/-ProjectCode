@@ -22,7 +22,6 @@ public interface IMenu {
 
     public void createAction(ArrayList<ActionWallStreet> action);
 
-
-
+    public void Buy(ArrayList<ActionWallStreet>action );
 
 }
