@@ -1,4 +1,4 @@
-package com.company;
+package com.company.ExceptionProgramme;
 
 public class IdException extends Throwable {
 

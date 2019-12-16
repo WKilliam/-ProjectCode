@@ -1,6 +1,7 @@
-package com.company;
+package com.company.ExceptionProgramme;
 
 public class OldException extends Throwable {
+
 
 
 
