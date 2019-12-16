@@ -14,8 +14,10 @@ public class HelpManager implements IMenu {
         System.out.println("=      CREATE USER          =");
         System.out.println("=      USER LIST            =");
         System.out.println("=      EDITING USER         =");
+        System.out.println("=      REMOVE USER          =");
         System.out.println("=      TO LEAVE             =");
         System.out.println("=============================");
+
 
     }
 
@@ -27,6 +29,11 @@ public class HelpManager implements IMenu {
         System.out.println(" #3-FUNCTION           " + listuser.get(valueselect).getFonction());
         System.out.println(" #4-DEPARTEMENT        " + listuser.get(valueselect).getDepartement());
         System.out.println(" #5-OLD                " + listuser.get(valueselect).getOld());
+    }
+
+    @Override
+    public void removeUser(ArrayList<User> list) {
+
     }
 
 

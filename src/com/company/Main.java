@@ -10,13 +10,15 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception, EditingException, OldException {
+    public static void main(String[] args) throws Exception, EditingException, OldException, RemoveException {
 
 
         ArrayList<User> listuser = new ArrayList<>();
 
         User test1 = new User("TEST","V","L",2,19);
+        User test2 = new User("TET","V","L",2,19);
         listuser.add(test1);
+        listuser.add(test2);
 
         IMenu help = new HelpManager();
         help.helpManager();

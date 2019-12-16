@@ -1,6 +1,7 @@
 package com.company.Menu;
 
 import com.company.ExceptionProgramme.EditingException;
+import com.company.ExceptionProgramme.IdException;
 import com.company.Menu.HelpManager;
 import com.company.Menu.IMenu;
 import com.company.User;
@@ -49,11 +50,26 @@ public class EditingUser implements IMenu {
                             Scanner newsurName1 = new Scanner(System.in);
                             String s1 = newsurName1.nextLine();
                             listuser.get(valueselect).getSurNameChange(s1);
+                            for (int i = 0; i <listuser.size() ; i++) {
+                                String nametesting = listuser.get(valueselect).getName();
+
+                                if(listuser.get(i).getSurname().equals(s1)&& listuser.get(i).getName().equals(nametesting)){
+                                    throw new IdException(" this user already exists");
+                                }
+                            }
                             break;
                         case 1:
                             Scanner newName = new Scanner(System.in);
                             String s = newName.nextLine();
                             listuser.get(valueselect).getNameChange(s);
+                            for (int i = 0; i <listuser.size() ; i++) {
+
+                                String surnametesting = listuser.get(valueselect).getSurname();
+
+                                if(listuser.get(i).getName().equals(s)&& listuser.get(i).getSurname().equals(surnametesting)){
+                                    throw new IdException(" this user already exists");
+                                }
+                            }
                             break;
                         default:
                             System.out.println("please select a value from 1 to 5");
@@ -72,14 +88,20 @@ public class EditingUser implements IMenu {
                 System.out.println("please select a value from 1 to 5");
             }
 
-        }catch (Exception e1){
+        }catch (IdException e1){
+            System.out.println("this id existed");
+        }catch (Exception e){
             System.out.println("chosen value does not match please choose a corresponding number");
-
         }
     }
 
     @Override
     public void helpManagerEditing(ArrayList<User> listuser, int valueselect) {
+
+    }
+
+    @Override
+    public void removeUser(ArrayList<User> list) {
 
     }
 

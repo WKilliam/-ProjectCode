@@ -7,16 +7,21 @@ import java.util.ArrayList;
 
 public class FunctionalManager {
 
-    public void gestionCommande(String input, ArrayList<User> userlist) throws Exception, EditingException {
+    public void gestionCommande(String input, ArrayList<User> userlist) throws Exception, EditingException, RemoveException {
 
         IMenu help = new HelpManager();
         IMenu createuser =new CreateUser();
         IMenu editing = new EditingUser();
+        IMenu remove = new RemoveUser();
 
         switch (input){
 
+            case "REMOVE USER":
+                remove.removeUser(userlist);
+                break;
             case"EDITING USER":
                 editing.editingU(userlist);
+                help.helpManager();
                 break;
             case"USER LIST":
                 if(userlist.size()==0){
@@ -25,13 +30,16 @@ public class FunctionalManager {
                 for (int i = 0; i < userlist.size(); i++) {
                     System.out.println("NAME : "+ userlist.get(i).getName());
                 }
+                help.helpManager();
                 break;
 
             case"CREATE USER":
                 createuser.createUsersup(userlist);
+                help.helpManager();
                 break;
             default:
                 System.out.println("bad choose");
+                help.helpManager();
                 break;
             case "HELP":
                 help.helpManager();

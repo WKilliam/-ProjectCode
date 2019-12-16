@@ -85,6 +85,11 @@ public class CreateUser implements IMenu {
 
     }
 
+    @Override
+    public void removeUser(ArrayList<User> list) {
+
+    }
+
     /**
      * this function creates objects of type USER
      * @param name String value name of Object
