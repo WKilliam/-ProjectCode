@@ -8,6 +8,7 @@ import com.company.Menu.IMenu;
 import com.company.Obeject.ActionWallStreet;
 import com.company.Obeject.User;
 
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -15,6 +16,7 @@ public class CreateAction implements IMenu {
 
     public void createAction(ArrayList<ActionWallStreet> action){
 
+        IMenu help = new HelpManager();
         try{
             System.out.println("TO CREATE AN ACTION FOLLOWED THIS FORMAT :");
             System.out.println("ACTION_REFERENCE");
@@ -47,10 +49,13 @@ public class CreateAction implements IMenu {
                 actionCreate.getPriceOpencreate(indexprice);
 
                 action.add(actionCreate);
+                help.helpManager();
             }
         }catch (EditingException e){
+            help.helpManager();
             System.out.println("this input is not good");
         }catch (IdException e) {
+            help.helpManager();
             System.out.println("this value existed");;
         }
         catch (Exception e){

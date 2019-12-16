@@ -12,6 +12,7 @@ public class RemoveUser implements IMenu {
 
     public void removeUser(ArrayList<User> list) throws RemoveException {
 
+        IMenu help = new HelpManager();
         System.out.println("NAME REMOVE ?");
         System.out.println("Please select the name and first name in this format"
                         +"\n"+"name_surname");
@@ -33,8 +34,12 @@ public class RemoveUser implements IMenu {
                 if (list.get(i).getName().equals(namevalue)&&list.get(i).getSurname().equals(surnamevalue)){
                     System.out.println(list.get(i).getName() + " "+list.get(i).getSurname()+" is delete ");
                     list.remove(i);
+                }else {
+
                 }
             }
+            System.out.println(" his user not existed in data base");
+            help.helpManager();
         }
 
     }

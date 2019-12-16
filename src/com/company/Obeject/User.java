@@ -3,6 +3,7 @@ package com.company.Obeject;
 import com.company.ExceptionProgramme.OldException;
 
 import java.io.File;
+import java.util.ArrayList;
 
 public class User {
 
@@ -11,6 +12,7 @@ public class User {
     private String fonction;
     private Integer departement;
     private Integer old;
+    private ArrayList<Purchase> actionHas = new ArrayList<>();
 
     public User(String name,String surname,String fonction,int departement,int old) throws OldException {
 
@@ -22,6 +24,7 @@ public class User {
             throw new OldException();
         }
         this.surname=surname;
+        this.actionHas=null;
     }
 
     public String getName() {
@@ -66,5 +69,13 @@ public class User {
     public String getFunctionChange(String newName){
         this.fonction = newName;
         return this.fonction;
+    }
+
+    public ArrayList<Purchase> getActionHas() {
+        return actionHas;
+    }
+    public ArrayList<Purchase> getchangeActionHas(Purchase action) {
+        this.actionHas.add(action);
+        return this.actionHas;
     }
 }

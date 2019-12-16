@@ -14,7 +14,7 @@ public class HelpManager implements IMenu {
         System.out.println("*                    *                     *                       *                       *");
         System.out.println("*                    *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
         System.out.println("*      ACTION LIST   *    CREATE ACTION    *                       *                       *");
-        System.out.println("*      USER LIST     *                     *                       *                       *");
+        System.out.println("*      USER LIST     *    BUY PURCHASEE    *                       *                       *");
         System.out.println("*      HELP          *                     *                       *                       *");
         System.out.println("*      TO LEAVE      *                     *                       *                       *");
         System.out.println("********************************************************************************************");

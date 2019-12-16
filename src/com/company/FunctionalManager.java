@@ -20,12 +20,15 @@ public class FunctionalManager {
         IMenu remove = new RemoveUser();
         IMenu actioncre = new CreateAction();
         switch (input){
+            case"BUY PURCHASEE":
+
+                break;
             case"ACTION LIST":
                 if(action.size()==0){
                     System.out.println( "this list user is null size = "+action.size());
                 }
                 for (int i = 0; i < action.size(); i++) {
-                    System.out.println("NAME : "+ action.get(i).getActionW() +" ID :"+action.get(i).getiDlocalization());
+                    System.out.println("NAME : "+ action.get(i).getActionW() +" ID :"+action.get(i).getiDlocalization()+" PRICE :"+action.get(i).getActionW());
                 }
                 break;
             case"CREATE ACTION":
@@ -43,7 +46,7 @@ public class FunctionalManager {
                     System.out.println( "this list user is null size = "+userlist.size());
                 }
                 for (int i = 0; i < userlist.size(); i++) {
-                    System.out.println("NAME : "+ userlist.get(i).getName());
+                    System.out.println("NAME : "+ userlist.get(i).getName()+" SURNAME :"+userlist.get(i).getSurname());
                 }
                 help.helpManager();
                 break;
