@@ -3,6 +3,7 @@ package com.company.Menu;
 import com.company.ExceptionProgramme.EditingException;
 import com.company.ExceptionProgramme.IdException;
 import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.Purchase;
 import com.company.Obeject.User;
 
 import java.util.ArrayList;
@@ -110,7 +111,7 @@ public class EditingUser implements IMenu {
     }
 
     @Override
-    public void Buy(ArrayList<ActionWallStreet> action) {
+    public void Buy(ArrayList<ActionWallStreet> action,ArrayList<User> user, ArrayList<Purchase>purchases) {
 
     }
 

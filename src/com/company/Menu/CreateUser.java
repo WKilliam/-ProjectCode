@@ -4,6 +4,7 @@ import com.company.ExceptionProgramme.IdException;
 import com.company.ExceptionProgramme.OldException;
 import com.company.ExceptionProgramme.TextException;
 import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.Purchase;
 import com.company.Obeject.User;
 
 import java.util.ArrayList;
@@ -98,7 +99,7 @@ public class CreateUser implements IMenu {
     }
 
     @Override
-    public void Buy(ArrayList<ActionWallStreet> action) {
+    public void Buy(ArrayList<ActionWallStreet> action,ArrayList<User>user, ArrayList<Purchase>purchases) {
 
     }
 

@@ -6,6 +6,7 @@ import com.company.ExceptionProgramme.RemoveException;
 import com.company.Menu.HelpManager;
 import com.company.Menu.IMenu;
 import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.Purchase;
 import com.company.Obeject.User;
 
 import java.util.ArrayList;
@@ -18,6 +19,7 @@ public class Main {
 
         ArrayList<User> listuser = new ArrayList<>();
         ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
+        ArrayList<Purchase> listpurchar = new ArrayList<>();
         ActionWallStreet ac = new ActionWallStreet("MOBILE","FFT");
         listeAction.add(ac);
         User test1 = new User("TEST","V","L",2,19);
@@ -31,7 +33,7 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             String input = sc.nextLine();
             FunctionalManager test = new FunctionalManager();
-            test.gestionCommande(input,listuser,listeAction);
+            test.gestionCommande(input,listuser,listeAction,listpurchar);
         }
     }
 }

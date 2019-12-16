@@ -6,6 +6,7 @@ import com.company.ExceptionProgramme.RemoveException;
 import com.company.ExceptionProgramme.TextException;
 import com.company.Menu.IMenu;
 import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.Purchase;
 import com.company.Obeject.User;
 
 import java.awt.*;
@@ -64,7 +65,7 @@ public class CreateAction implements IMenu {
     }
 
     @Override
-    public void Buy(ArrayList<ActionWallStreet> action) {
+    public void Buy(ArrayList<ActionWallStreet> action,ArrayList<User>user, ArrayList<Purchase>purchases) {
 
     }
 

@@ -1,6 +1,7 @@
 package com.company.Menu;
 
 import com.company.Obeject.ActionWallStreet;
+import com.company.Obeject.Purchase;
 import com.company.Obeject.User;
 
 import java.util.ArrayList;
@@ -12,7 +13,7 @@ public class HelpManager implements IMenu {
         System.out.println("                                 POSSIBLE ORDERS ARE :                                      ");
         System.out.println("********************************************************************************************");
         System.out.println("*                    *                     *                       *                       *");
-        System.out.println("*                    *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
+        System.out.println("*      LIST PURCHASE *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
         System.out.println("*      ACTION LIST   *    CREATE ACTION    *                       *                       *");
         System.out.println("*      USER LIST     *    BUY PURCHASEE    *                       *                       *");
         System.out.println("*      HELP          *                     *                       *                       *");
@@ -45,7 +46,7 @@ public class HelpManager implements IMenu {
     }
 
     @Override
-    public void Buy(ArrayList<ActionWallStreet> action) {
+    public void Buy(ArrayList<ActionWallStreet> action,ArrayList<User> user, ArrayList<Purchase>purchases) {
 
     }
 

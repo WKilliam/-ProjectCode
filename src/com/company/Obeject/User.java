@@ -12,10 +12,11 @@ public class User {
     private String fonction;
     private Integer departement;
     private Integer old;
-    private ArrayList<Purchase> actionHas = new ArrayList<>();
+    private ArrayList<Purchase> actionHas;
 
     public User(String name,String surname,String fonction,int departement,int old) throws OldException {
 
+        this.actionHas = new ArrayList<>();
         this.departement=departement;
         this.fonction=fonction;
         this.name=name;
@@ -24,7 +25,6 @@ public class User {
             throw new OldException();
         }
         this.surname=surname;
-        this.actionHas=null;
     }
 
     public String getName() {
@@ -74,6 +74,7 @@ public class User {
     public ArrayList<Purchase> getActionHas() {
         return actionHas;
     }
+
     public ArrayList<Purchase> getchangeActionHas(Purchase action) {
         this.actionHas.add(action);
         return this.actionHas;
