@@ -1,21 +1,20 @@
 package com.company;
 
-import com.company.ExceptionProgramme.EditingException;
-import com.company.ExceptionProgramme.RemoveException;
-import com.company.Menu.*;
-import com.company.Obeject.ActionWallStreet;
-import com.company.Obeject.Purchase;
-import com.company.Obeject.User;
+import com.company.Working.ExceptionProgramme.EditingException;
+import com.company.Working.ExceptionProgramme.RemoveException;
+import com.company.Working.Menu.ListUser;
+import com.company.Working.Menu.*;
+import com.company.Working.Obeject.ActionWallStreet;
+import com.company.Working.Obeject.Purchase;
+import com.company.Working.Obeject.User;
 
-import javax.swing.plaf.synth.SynthOptionPaneUI;
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.WeakHashMap;
 
 public class FunctionalManager {
 
     public void gestionCommande(String input, ArrayList<User> userlist, ArrayList<ActionWallStreet> action, ArrayList<Purchase> purchalist) throws Exception, EditingException, RemoveException {
 
+        IMenu listeAction = new ListAction();
         IMenu help = new HelpManager();
         IMenu createuser =new CreateUser();
         IMenu editing = new EditingUser();
@@ -24,6 +23,7 @@ public class FunctionalManager {
         IMenu buy = new BuyAction();
         IMenu editA = new EditingAction();
         IMenu removeAct = new RemoveAction();
+        IMenu listUserprint = new ListUser();
         switch (input){
             case"REMOVE ACTION":
                 removeAct.removeAction(action,userlist,purchalist);
@@ -51,37 +51,28 @@ public class FunctionalManager {
                 buy.Buy(action,userlist,purchalist);
                 break;
             case"ACTION LIST":
-                if(action.size()==0){
-                    System.out.println( "this list user is null size = "+action.size());
-                    help.helpManager();
-                }
-                for (int i = 0; i < action.size(); i++) {
-                    System.out.println("NAME : "+ action.get(i).getActionW() +" ID :"+action.get(i).getiDlocalization()+" PRICE :"+action.get(i).getActionW());
-                }
+                listeAction.listeActionPrint(action);
+                help.helpManager();
                 break;
             case"CREATE ACTION":
                 actioncre.createAction(action);
+                help.helpManager();
                 break;
             case "REMOVE USER":
                 remove.removeUser(userlist);
+                help.helpManager();
                 break;
             case"EDITING USER":
                 editing.editingU(userlist);
                 help.helpManager();
                 break;
             case"USER LIST":
-                if(userlist.size()==0){
-                    System.out.println( "this list user is null size = "+userlist.size());
-                    help.helpManager();
-                }
-                for (int i = 0; i < userlist.size(); i++) {
-                    System.out.println("NAME : "+ userlist.get(i).getName()+" SURNAME :"+userlist.get(i).getSurname());
-                    System.out.println(userlist.get(i).getName()+"_"+userlist.get(i).getSurname()+"_"+userlist.get(i).getFonction()+"_"+userlist.get(i).getDepartement()+"_"+userlist.get(i).getOld());
-                }
+                listUserprint.listUserCall(userlist);
                 help.helpManager();
                 break;
             case"CREATE USER":
                 createuser.createUsersup(userlist);
+                help.helpManager();
                 break;
             default:
                 System.out.println("bad choose");
