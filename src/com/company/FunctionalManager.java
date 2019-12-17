@@ -1,6 +1,7 @@
 package com.company;
 
 import com.company.Working.ExceptionProgramme.EditingException;
+import com.company.Working.ExceptionProgramme.IdException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Menu.ListUser;
 import com.company.Working.Menu.*;
@@ -12,7 +13,7 @@ import java.util.ArrayList;
 
 public class FunctionalManager {
 
-    public void gestionCommande(String input, ArrayList<User> userlist, ArrayList<ActionWallStreet> action, ArrayList<Purchase> purchalist) throws Exception, EditingException, RemoveException {
+    public void gestionCommande(String input, ArrayList<User> userlist, ArrayList<ActionWallStreet> action, ArrayList<Purchase> purchalist) throws Exception, EditingException, RemoveException, IdException {
 
         IMenu listeAction = new ListAction();
         IMenu help = new HelpManager();

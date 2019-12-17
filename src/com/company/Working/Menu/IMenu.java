@@ -1,6 +1,7 @@
 package com.company.Working.Menu;
 
 import com.company.Working.ExceptionProgramme.EditingException;
+import com.company.Working.ExceptionProgramme.IdException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
@@ -21,7 +22,7 @@ public interface IMenu {
 
     public void removeUser(ArrayList<User> list) throws RemoveException;
 
-    public void createAction(ArrayList<ActionWallStreet> action);
+    public void createAction(ArrayList<ActionWallStreet> action) throws IdException;
 
     public void Buy(ArrayList<ActionWallStreet>action, ArrayList<User>user, ArrayList<Purchase>purchases) throws EditingException;
 

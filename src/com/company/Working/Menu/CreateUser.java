@@ -59,6 +59,7 @@ public class CreateUser implements IMenu {
                     int depart = Integer.parseInt(localization);
                     int oldlace = Integer.parseInt(old);
                     createUser(name,surname,function,oldlace,depart,userlist);
+                    System.out.println("USER CREATED SUCCES");
 
                 } catch (TextException e) {
                     e.printStackTrace();

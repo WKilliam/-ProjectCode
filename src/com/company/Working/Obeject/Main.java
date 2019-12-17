@@ -2,6 +2,7 @@ package com.company.Working.Obeject;
 
 import com.company.FunctionalManager;
 import com.company.Working.ExceptionProgramme.EditingException;
+import com.company.Working.ExceptionProgramme.IdException;
 import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Menu.HelpManager;
@@ -12,13 +13,13 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) throws Exception, EditingException, OldException, RemoveException {
+    public static void main(String[] args) throws Exception, EditingException, OldException, RemoveException, IdException {
 
 
         ArrayList<User> listuser = new ArrayList<>();
         ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
         ArrayList<Purchase> listpurchar = new ArrayList<>();
-        ActionWallStreet ac = new ActionWallStreet("MOBILE","FFT");
+        ActionWallStreet ac = new ActionWallStreet("MOBILE","FFT",true,20);
         listeAction.add(ac);
         User test1 = new User("TEST","V","L",2,19);
         listuser.add(test1);
