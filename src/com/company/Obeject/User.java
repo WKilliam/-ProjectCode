@@ -75,8 +75,28 @@ public class User {
         return actionHas;
     }
 
-    public ArrayList<Purchase> getchangeActionHas(Purchase action) {
+    public ArrayList<Purchase> setActionHas(Purchase action) {
         this.actionHas.add(action);
         return this.actionHas;
+    }
+
+    public void setSurname(String surname) {
+        this.surname = surname;
+    }
+
+    public void setOld(Integer old) {
+        this.old = old;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setFonction(String fonction) {
+        this.fonction = fonction;
+    }
+
+    public void setDepartement(Integer departement) {
+        this.departement = departement;
     }
 }

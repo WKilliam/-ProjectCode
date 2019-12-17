@@ -8,6 +8,7 @@ import com.company.Obeject.Purchase;
 import com.company.Obeject.User;
 
 import javax.swing.plaf.synth.SynthOptionPaneUI;
+import java.awt.*;
 import java.util.ArrayList;
 import java.util.WeakHashMap;
 
@@ -21,7 +22,17 @@ public class FunctionalManager {
         IMenu remove = new RemoveUser();
         IMenu actioncre = new CreateAction();
         IMenu buy = new BuyAction();
+        IMenu editA = new EditingAction();
+        IMenu removeAct = new RemoveAction();
         switch (input){
+            case"REMOVE ACTION":
+                removeAct.removeAction(action,userlist,purchalist);
+                help.helpManager();
+                break;
+            case"EDITING ACTION":
+                editA.editingAction(action);
+                help.helpManager();
+                break;
             case"PURCHASE USER":
                 for (int i = 0; i < userlist.size(); i++) {
                     System.out.println(" name :"+userlist.get(i).getName()+" purchase :"+userlist.get(i).getActionHas());

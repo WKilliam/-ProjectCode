@@ -19,20 +19,9 @@ public class Purchase {
     public Purchase(User user,ActionWallStreet action,Integer datebuyyear,Integer datebuyday,Integer datebuymouth) throws EditingException {
         this.action=action;
         IMenu help = new HelpManager();
-        if(datebuymouth%2==0&& datebuymouth >=1 && datebuymouth<=12){
-            this.datebuymouth=datebuymouth;
-        }if (datebuymouth%1==0 && datebuymouth>=1 && datebuymouth<=12){
-            this.datebuymouth=datebuymouth;
-        }else if (datebuymouth==0&&datebuymouth<1&&datebuymouth>12){
-            System.out.println("bad date mouth ");
-            throw new EditingException();
-        }
-        if(datebuyday>=1 && datebuyday<=31){
-            this.datebuyday=datebuyday;
-        }else {
-            System.out.println("bad date value day");
-            throw new EditingException();
-        }
+
+        this.datebuyday = datebuyday;
+        this.datebuymouth = datebuymouth;
         this.datebuymouth=datebuymouth;
         this.datebuyday=datebuyday;
         this.datebuyyear=datebuyyear;
@@ -48,5 +37,21 @@ public class Purchase {
 
     public String getUserrname() {
         return userrname;
+    }
+
+    public String getUsersurname() {
+        return usersurname;
+    }
+
+    public Integer getDatebuyday() {
+        return datebuyday;
+    }
+
+    public Integer getDatebuymouth() {
+        return datebuymouth;
+    }
+
+    public Integer getDatebuyyear() {
+        return datebuyyear;
     }
 }

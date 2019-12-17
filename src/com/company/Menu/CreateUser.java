@@ -103,6 +103,21 @@ public class CreateUser implements IMenu {
 
     }
 
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction) {
+
+    }
+
+    @Override
+    public void helpManagerEditAction() {
+
+    }
+
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
+
+    }
+
     /**
      * this function creates objects of type USER
      * @param name String value name of Object

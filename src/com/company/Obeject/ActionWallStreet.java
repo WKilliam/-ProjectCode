@@ -36,4 +36,21 @@ public class ActionWallStreet {
     public String getiDlocalization() {
         return this.iDlocalization;
     }
+
+    public void setPriceOpen(Integer priceOpen) {
+        this.priceOpen = priceOpen;
+    }
+
+    public void setPriceClose(Integer priceClose) {
+        this.priceClose = priceClose;
+    }
+
+    public void setiDlocalization(String iDlocalization) {
+        this.iDlocalization = iDlocalization;
+    }
+
+    public void setActionW(String actionW) {
+        this.actionW = actionW;
+    }
+
 }

@@ -14,8 +14,8 @@ public class HelpManager implements IMenu {
         System.out.println("********************************************************************************************");
         System.out.println("*                    *                     *                       *                       *");
         System.out.println("*      LIST PURCHASE *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
-        System.out.println("*      ACTION LIST   *    CREATE ACTION    *                       *                       *");
-        System.out.println("*      USER LIST     *    BUY PURCHASEE    *                       *                       *");
+        System.out.println("*      ACTION LIST   *    CREATE ACTION    *     EDITING ACTION    *     REMOVE ACTION     *");
+        System.out.println("*      USER LIST     *    BUY PURCHASEE    *     EDITING PURCHASE  *                       *");
         System.out.println("*      HELP          *                     *                       *                       *");
         System.out.println("*      TO LEAVE      *                     *                       *                       *");
         System.out.println("********************************************************************************************");
@@ -23,6 +23,20 @@ public class HelpManager implements IMenu {
     }
 
 
+    public void helpManagerEditAction(){
+
+        System.out.println("        POSSIBLE ORDERS ARE :           ");
+        System.out.println("              NAME          :           ");
+        System.out.println("              ID_REFERENCE  :           ");
+        System.out.println("              PRICE BUY     :           ");
+        System.out.println("              PRICE SELL    :           ");
+
+    }
+
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
+
+    }
 
 
     public void helpManagerEditing(ArrayList<User> listuser,int valueselect){
@@ -47,6 +61,11 @@ public class HelpManager implements IMenu {
 
     @Override
     public void Buy(ArrayList<ActionWallStreet> action,ArrayList<User> user, ArrayList<Purchase>purchases) {
+
+    }
+
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction) {
 
     }
 

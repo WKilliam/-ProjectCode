@@ -55,6 +55,21 @@ public class RemoveUser implements IMenu {
 
     }
 
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction) {
+
+    }
+
+    @Override
+    public void helpManagerEditAction() {
+
+    }
+
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
+
+    }
+
 
     @Override
     public void helpManager() {

@@ -23,6 +23,12 @@ public interface IMenu {
 
     public void createAction(ArrayList<ActionWallStreet> action);
 
-    public void Buy(ArrayList<ActionWallStreet>action, ArrayList<User>user, ArrayList<Purchase>purchases);
+    public void Buy(ArrayList<ActionWallStreet>action, ArrayList<User>user, ArrayList<Purchase>purchases) throws EditingException;
+
+    public void editingAction(ArrayList<ActionWallStreet> listaction);
+
+    public void helpManagerEditAction();
+
+    public void removeAction(ArrayList<ActionWallStreet> action,ArrayList<User> user,ArrayList<Purchase> purchase);
 
 }

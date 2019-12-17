@@ -1,6 +1,7 @@
 package com.company.Menu;
 
 import com.company.ExceptionProgramme.EditingException;
+import com.company.ExceptionProgramme.IdException;
 import com.company.ExceptionProgramme.RemoveException;
 import com.company.ExceptionProgramme.TextException;
 import com.company.Obeject.ActionWallStreet;
@@ -13,7 +14,114 @@ import java.util.Scanner;
 public class BuyAction implements IMenu{
 
 
-    public void Buy(ArrayList<ActionWallStreet>action,ArrayList<User> user,ArrayList<Purchase> purchases){
+    public void Buy(ArrayList<ActionWallStreet>action,ArrayList<User> user,ArrayList<Purchase> purchases) throws EditingException {
+        IMenu help = new HelpManager();
+        if(action.size()==0){
+            System.out.println("you haven't action today !!! sorry !");
+            help.helpManager();
+        }
+        else{
+
+            boolean exit = true;
+            do {
+            System.out.println("    HERE IS THE LIST OF POTENTIAL BUYERS AND THEIR PURCHASE IN POSSESSION :      ");
+            for (int i = 0; i < user.size() ; i++) {
+                System.out.println(" NAME USER              : "+                                 user.get(i).getName());
+                System.out.println(" SURNAME USER              : "+                           user.get(i).getSurname());
+                System.out.println("                            *****                                                ");
+            }
+            for (int i = 0; i < action.size(); i++) {
+                System.out.println(" ACTION WALL STREET ON THE MARKET : "+                  action.get(i).getActionW());
+                System.out.println(" ID_ACTION WALL STREET ON THE MARKET : "+        action.get(i).getiDlocalization());
+            }
+            System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :         ");
+            System.out.println("         NAMEUSER_SURNAME_IDACTION_DD_MONTH_YERA             ");
+
+            Scanner sc1 = new Scanner(System.in);
+            String indexbuy = sc1.nextLine();
+
+            String tab[] = indexbuy.split("_");
+
+            ArrayList<String> listmots = new ArrayList<>();
+
+            for (int i = 0; i <tab.length ; i++) {
+                listmots.add(tab[i]);
+            }
+            if(listmots.size()<6){
+                System.out.println("PROBLEME INPUT VALUE ");
+            }else{
+
+                for (int i = 0; i <user.size() ; i++) {
+
+                    String name     = listmots.get(0);
+                    String surname  = listmots.get(1);
+                    String idac     = listmots.get(2);
+                    String m1 = listmots.get(3);
+                    String m2 = listmots.get(4);
+                    String m3 = listmots.get(5);
+
+                    int day      = Integer.parseInt(m1);
+                    int month     = Integer.parseInt(m2);
+                    int yeras     = Integer.parseInt(m3);
+
+                    if(user.get(i).getName().equals(name)&& user.get(i).getSurname().equals(surname)){
+
+                        for (int j = 0; j <action.size() ; j++) {
+
+                            if (action.get(j).getiDlocalization().equals(idac)){
+
+                                if(month>=1 && month<=12){
+                                    if(month%2==0){
+                                        if (day>=1&&day<=30){
+                                            Purchase pur = new Purchase(user.get(i),action.get(i),yeras,day,month);
+                                            purchases.add(pur);
+                                            user.get(i).setActionHas(pur);
+                                            System.out.println(user.get(i).getName()+" NAME : "+user.get(i).getSurname()+"\n"+
+                                                    " BUY : "+action.get(i).getActionW()+" ID : "+action.get(i).getiDlocalization()+"\n"+
+                                                    " AND USER HAVE :"+user.get(i).getActionHas()+"\n"
+                                                    +" DATE :"+pur.getDatebuyday()+"/"+pur.getDatebuymouth()+"/"+pur.getDatebuyyear());
+                                        }else{
+                                            System.out.println("THIS FORMAT IS NOT GOOD MONTH IS :"+month+" AND DAY IS :"+day+" IS NOT POSSIBLE ");
+                                        }
+
+                                    }else{
+                                        if (day>=1&&day<=31){
+                                            Purchase pur1 = new Purchase(user.get(i),action.get(i),yeras,day,month);
+                                            purchases.add(pur1);
+                                            user.get(i).setActionHas(pur1);
+                                            System.out.println(user.get(i).getName()+" NAME : "+user.get(i).getSurname()+"\n"+
+                                                    " BUY : "+action.get(i).getActionW()+" ID : "+action.get(i).getiDlocalization()+"\n"+
+                                                    " AND USER HAVE :"+user.get(i).getActionHas()+"\n"
+                                                    +" DATE :"+pur1.getDatebuyday()+"/"+pur1.getDatebuymouth()+"/"+pur1.getDatebuyyear());
+                                        }else{
+                                            System.out.println("THIS FORMAT IS NOT GOOD MONTH IS :"+month+" AND DAY IS :"+day+" IS NOT POSSIBLE ");
+                                        }
+                                    }
+                                }else{
+                                    System.out.println("FORMAT MONTH NOT GOOD PLEASE SELECT OF A VALUE BETWEEN 1 OR 12");
+                                }
+                            }else {
+                                System.out.println(" THIS ACTION NOT EXISTED IN DATA BASE ");
+                            }
+                        }
+                    }else{
+                        System.out.println(" USER IS NOT EXISTED IN DATA BASE");
+                    }
+                }
+            }
+                System.out.println("YOU HAVE FINISH ? Y / N ");
+                Scanner rep = new Scanner(System.in);
+                String s3 = rep.nextLine();
+                if (s3.equals("Y")) {
+                    exit = false;
+                    help.helpManager();
+                }else if (s3.equals("N")){
+
+                }
+            }while (exit==true);
+        }
+    }
+/*
 
         IMenu help = new HelpManager();
         if(action.size()==0){
@@ -34,8 +142,7 @@ public class BuyAction implements IMenu{
             System.out.println("***************************************");
 
             try {
-                Scanner sc = new Scanner(System.in);
-                int indexbuy = sc.nextInt();
+
 
 
                 System.out.println("***************************************");
@@ -66,7 +173,6 @@ public class BuyAction implements IMenu{
                 for (int i = 0; i <test.length ; i++) {
 
                     int pars = Integer.parseInt(test[i]);
-                    System.out.println(pars);
                     listedemot.add(pars);
                 }
                 if(listedemot.size()<2&&listedemot.size()>3){
@@ -80,17 +186,29 @@ public class BuyAction implements IMenu{
                     purchases.add(pur);
                     user.get(indexbuy1).getActionHas().add(pur);
                     System.out.println("PURCHASE VALID");
+                    help.helpManager();
                 }
             }catch (Exception | EditingException e){
                 System.out.println("INCORRECT VALUE select between 0 and "+action.size());
             }
         }
     }
+*/
 
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction) {
 
+    }
 
+    @Override
+    public void helpManagerEditAction() {
 
+    }
 
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
+
+    }
 
 
     @Override
