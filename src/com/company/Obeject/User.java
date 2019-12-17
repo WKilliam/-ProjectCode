@@ -14,6 +14,9 @@ public class User {
     private Integer old;
     private ArrayList<Purchase> actionHas;
 
+
+
+
     public User(String name,String surname,String fonction,int departement,int old) throws OldException {
 
         this.actionHas = new ArrayList<>();
@@ -22,7 +25,7 @@ public class User {
         this.name=name;
         this.old=old;
         if(old<18 || old >100){
-            throw new OldException();
+            throw new OldException("old bad value");
         }
         this.surname=surname;
     }

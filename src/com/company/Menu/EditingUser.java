@@ -53,6 +53,7 @@ public class EditingUser implements IMenu {
                                 System.out.println("     NAME_SURNAME_FUNCTION_DEPARTEMENT_OLD                                           ");
                                 System.out.println("     IF YOU DIDN'T WANT TO CHANGE A VALUE LEAVE A SPACE LIKE THE FOLLOWING FORMAT    ");
                                 System.out.println("     NAME_SURNAME_ _DEPARTEMENT_OLD                                                  ");
+                                System.out.println("     NAME_SURNAME_ _DEPARTEMENT_  _                                                  ");
 
                                 Scanner lect1 = new Scanner(System.in);
                                 String s3 = lect1.nextLine();
@@ -84,7 +85,7 @@ public class EditingUser implements IMenu {
                                     if(user.getSurname().equals(surname)&& user.getName().equals(name)){
                                         System.out.println(" THIS USER EXISTED PLEASE CHANGE NAME OR SURNAME");
                                     }else{
-                                        
+
                                             for (int k = 0; k < listmots2.size(); k++) {
                                                 System.out.println(k);
                                                 switch (k) {
@@ -92,16 +93,24 @@ public class EditingUser implements IMenu {
                                                         if (s8.equals(" ")) {
                                                             user.setOld(user.getOld());
                                                         } else {
-                                                            int oldvalue2 = Integer.parseInt(s8);
-                                                            user.setOld(oldvalue2);
+                                                            try{
+                                                                int oldvalue2 = Integer.parseInt(s8);
+                                                                user.setOld(oldvalue2);
+                                                            }catch (Exception e){
+                                                                throw new TextException("TEXT OLD IS INVALID :"+e.getMessage());
+                                                            }
                                                         }
                                                         break;
                                                     case 1:
                                                         if (s7.equals(" ")) {
                                                             user.setDepartement(user.getDepartement());
                                                         } else {
+                                                            try{
                                                             int departemen2 = Integer.parseInt(s7);
                                                             user.setDepartement(departemen2);
+                                                            }catch (Exception e){
+                                                                throw new TextException("TEXT OLD IS INVALID :"+e.getMessage());
+                                                            }
                                                         }
                                                         break;
                                                     case 2:
@@ -150,7 +159,7 @@ public class EditingUser implements IMenu {
                     break;
                 }
             }while (exit==true);
-        }catch (Exception e){
+        }catch (Exception | TextException e){
             System.out.println("THIS VALEUR OF INPUT IS NOT GOOD ");
         }
     }

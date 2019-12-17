@@ -82,7 +82,6 @@ public class FunctionalManager {
                 break;
             case"CREATE USER":
                 createuser.createUsersup(userlist);
-                help.helpManager();
                 break;
             default:
                 System.out.println("bad choose");

@@ -13,71 +13,82 @@ import java.util.Scanner;
 public class CreateUser implements IMenu {
 
     private String name = " NO DEFINED";
-    private String surname= " NO DEFINED";
-    private String function= " NO DEFINED";
-    private Integer departement= null;
+    private String surname = " NO DEFINED";
+    private String function = " NO DEFINED";
+    private Integer departement = null;
     private Integer old = null;
 
 
     /**
      * this function create user and stok
+     *
      * @param userlist list data of user
      */
-    public void createUsersup(ArrayList<User>userlist){
+    public void createUsersup(ArrayList<User> userlist) {
 
         IMenu help = new HelpManager();
+        System.out.println("     SELECT YOUR CREATE USER :                                      ");
+        System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :                ");
+
+        boolean exit = true;
+
+        do {
         try {
-            System.out.println("NAME USER :");
-            Scanner scname = new  Scanner(System.in);
-            String sname = scname.nextLine();
 
-            System.out.println("SURNAME USER :");
-            Scanner scsurname = new  Scanner(System.in);
-            String surname = scsurname.nextLine();
+            Scanner sc = new Scanner(System.in);
+            String scan = sc.nextLine();
+            String tab[] = scan.split("_");
+            ArrayList<String> text = new ArrayList<>();
+            for (int i = 0; i <tab.length ; i++) {
+                text.add(tab[i]);
+            }
+            if(text.size()==5){
+                String name = text.get(0);
+                String surname = text.get(1);
+                String function = text.get(2);
+                String localization = text.get(3);
+                String old = text.get(4);
+                try{
+                for (int i = 0; i <userlist.size() ; i++) {
+                    User user = userlist.get(i);
 
-            for (int i = 0; i <userlist.size() ; i++) {
-                if( userlist.get(i).getName().equals(sname)&& userlist.get(i).getSurname().equals(surname)){
-                    throw new IdException(" this user already exists");
+                    if(user.getName().equals(name) && user.getSurname().equals(surname)){
+
+                        throw new TextException(" THIS NAME AND SURNAME EXISTED IN DATA BASE");
+                    }
                 }
+                    int depart = Integer.parseInt(localization);
+                    int oldlace = Integer.parseInt(old);
+                    createUser(name,surname,function,oldlace,depart,userlist);
+
+                } catch (TextException e) {
+                    e.printStackTrace();
+                }
+                catch (OldException e) {
+                    e.printStackTrace();
+                }
+            }else {
+                System.out.println("YOUR LIST INPUT IS NOT GOOD");
             }
-
-            System.out.println("FONCTION USER :");
-            Scanner fonctionUser = new  Scanner(System.in);
-            String functionUser = fonctionUser.nextLine();
-
-
-            System.out.println("DEPARTEMENT USER( NUMBER ) :");
-            Scanner departementUser = new  Scanner(System.in);
-            int depart = departementUser.nextInt();
-            if(depart<0){
-                throw new TextException();
-            }
-            System.out.println("OLD USER( NUMBER ONLY) :");
-            Scanner old = new  Scanner(System.in);
-            int olduser = old.nextInt();
-
-            if(olduser<18 || olduser >100){
-                throw new OldException();
-            }
-
-            createUser(sname,surname,functionUser,olduser,depart,userlist);
-
-        }catch (OldException old){
-            help.createUsersup(userlist);
-            System.out.println("THIS OLD IS NOT GOOD");
-        }catch (IdException idE){
-            help.createUsersup(userlist);
-            System.out.println("USER EXISTED IN DATA BASE");
-        }catch (TextException e) {
-            help.createUsersup(userlist);
-            System.out.println("you got the wrong touch :"+e.getMessage());
+        }catch (Exception e){
+            System.out.println(" THIS ERROR ON INPUT TEXT");
         }
-        catch (Exception e){
-            help.createUsersup(userlist);
-            System.out.println(" YOUR PROBLEME IS :"+e.getMessage());
-        }
+            System.out.println("YOU HAVE FINISH ? Y / N ");
+            Scanner rep = new Scanner(System.in);
+            String s3 = rep.nextLine();
+            if (s3.equals("Y")) {
+                exit = false;
+            }
+            if (s3.equals("N")){
+                break;
+            }
+            else if(s3.equals("N")){
+
+            }
+        }while (exit==true);
+        help.helpManager();
     }
-
+    
     @Override
     public void editingU(ArrayList<User> listuser) {
 
