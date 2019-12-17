@@ -76,6 +76,7 @@ public class FunctionalManager {
                 }
                 for (int i = 0; i < userlist.size(); i++) {
                     System.out.println("NAME : "+ userlist.get(i).getName()+" SURNAME :"+userlist.get(i).getSurname());
+                    System.out.println(userlist.get(i).getName()+"_"+userlist.get(i).getSurname()+"_"+userlist.get(i).getFonction()+"_"+userlist.get(i).getDepartement()+"_"+userlist.get(i).getOld());
                 }
                 help.helpManager();
                 break;

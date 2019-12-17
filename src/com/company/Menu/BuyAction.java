@@ -115,7 +115,11 @@ public class BuyAction implements IMenu{
                 if (s3.equals("Y")) {
                     exit = false;
                     help.helpManager();
-                }else if (s3.equals("N")){
+                }
+                if (s3.equals("N")){
+
+                }
+                else if(s3.equals("N")){
 
                 }
             }while (exit==true);
