@@ -1,9 +1,11 @@
-package com.company.Working.Menu;
+package com.company.Working.Menu.UserPack;
 
 import com.company.Working.Clone.CloneFunction;
 import com.company.Working.Clone.IClone;
 import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.TextException;
+import com.company.Working.Menu.HelpManager;
+import com.company.Working.Menu.IMenu;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
 import com.company.Working.Obeject.User;

@@ -1,9 +1,11 @@
-package com.company.Working.Menu;
+package com.company.Working.Menu.UserPack;
 
 import com.company.Working.Clone.CloneFunction;
 import com.company.Working.Clone.IClone;
 import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.ExceptionProgramme.TextException;
+import com.company.Working.Menu.HelpManager;
+import com.company.Working.Menu.IMenu;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
 import com.company.Working.Obeject.User;
@@ -29,13 +31,16 @@ public class CreateUser implements IMenu {
 
         IClone clone = new CloneFunction();
         IMenu help = new HelpManager();
-        System.out.println("     SELECT YOUR CREATE USER :                                      ");
-        System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :                ");
 
         boolean exit = true;
 
         do {
         try {
+
+            System.out.println("     SELECT YOUR CREATE USER :                                      ");
+            System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :                ");
+
+            System.out.println("     NAME_SURNAME_ _DEPARTEMENT_OLD :                               ");
 
             Scanner sc = new Scanner(System.in);
             String scan = sc.nextLine();
@@ -51,8 +56,8 @@ public class CreateUser implements IMenu {
                     User user = userlist.get(i);
 
                     if(user.getName().equals(name) && user.getSurname().equals(surname)){
-
-                        throw new TextException(" THIS NAME AND SURNAME EXISTED IN DATA BASE");
+                        System.out.println("THIS USER EXISTED IN DATA BASE");
+                        throw new Exception();
                     }
                 }
                     int depart = Integer.parseInt(localization);
@@ -60,21 +65,19 @@ public class CreateUser implements IMenu {
                     createUser(name,surname,function,oldlace,depart,userlist);
                     System.out.println("USER CREATED SUCCES");
 
-                } catch (TextException e) {
-                    e.printStackTrace();
                 }
                 catch (OldException e) {
-                    e.printStackTrace();
+                    System.out.println("OLD IS NOT ACCEPTED THIS A LIMITE 18 <=> 100");
                 }
             }else {
                 System.out.println("YOUR LIST INPUT IS NOT GOOD");
             }
         }catch (Exception e){
             System.out.println(" THIS ERROR ON INPUT TEXT");
+
         }
             exit = clone.leaveQ();
         }while (exit==true);
-        help.helpManager();
     }
 
     @Override

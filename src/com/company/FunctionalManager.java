@@ -6,8 +6,12 @@ import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Menu.ActionPack.CreateAction;
 import com.company.Working.Menu.ActionPack.EditingAction;
 import com.company.Working.Menu.ActionPack.ListAction;
-import com.company.Working.Menu.ListUser;
+import com.company.Working.Menu.ActionPack.RemoveAction;
+import com.company.Working.Menu.UserPack.EditingUser;
+import com.company.Working.Menu.UserPack.ListUser;
 import com.company.Working.Menu.*;
+import com.company.Working.Menu.UserPack.CreateUser;
+import com.company.Working.Menu.UserPack.RemoveUser;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
 import com.company.Working.Obeject.User;
@@ -70,7 +74,7 @@ public class FunctionalManager {
                 editing.editingU(userlist);
                 help.helpManager();
                 break;
-            case"USER LIST":
+            case"LIST USER":
                 listUserprint.listUserCall(userlist);
                 help.helpManager();
                 break;
