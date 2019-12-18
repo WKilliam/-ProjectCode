@@ -10,6 +10,7 @@ import com.company.Working.Obeject.User;
 import com.company.Working.Menu.HelpManager;
 import com.company.Working.Menu.IMenu;
 
+import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -36,9 +37,17 @@ public class RemoveAction implements IMenu {
                 for (int i = 0; i <action.size() ; i++) {
                     ActionWallStreet actionWallStreet = action.get(i);
                     if(actionWallStreet.getiDlocalization().equals(index)){
-                        System.out.println(action.get(i).getiDlocalization() +" is delete ");
-                        action.remove(i);
-                        exit = clone.leaveQ();
+                        for (int j = 0; j <purchase.size() ; j++) {
+                            Purchase purchase1 = purchase.get(j);
+                            if(purchase1.getAction().equals(actionWallStreet)){
+                                System.out.println("SORRY THIS ACTION IS IN MARCKET MOVEMENT");
+                                throw new RemoveException();
+                            }else{
+                                System.out.println(action.get(i).getiDlocalization() +" is delete ");
+                                action.remove(i);
+                                exit = clone.leaveQ();
+                            }
+                        }
                     }
                     else {
                         System.out.println();
@@ -47,6 +56,9 @@ public class RemoveAction implements IMenu {
                 }
             }catch (Exception e){
                 System.out.println("THIS ID NOT EXISTED IN DATA BASE");
+                exit = clone.leaveQ();
+            }catch ( RemoveException e){
+                System.out.println("SELECTED INPUT ERROR");
                 exit = clone.leaveQ();
             }
         }while (exit == true);
@@ -61,6 +73,16 @@ public class RemoveAction implements IMenu {
 
     @Override
     public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
 
     }
 

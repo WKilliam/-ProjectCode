@@ -16,14 +16,21 @@ public class Main {
     public static void main(String[] args) throws Exception, EditingException, OldException, RemoveException, IdException {
 
 
-        ArrayList<User> listuser = new ArrayList<>();
-        ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
-        ArrayList<Purchase> listpurchar = new ArrayList<>();
 
-        ActionWallStreet ac = new ActionWallStreet("MOBILE","FFT",true,20);
-        listeAction.add(ac);
+
+        ArrayList<Purchase> listsellpurchar = new ArrayList<>();
+
+
+        ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
+        ActionWallStreet act = new ActionWallStreet("toto","FF",88);
+        listeAction.add(act);
+
+        ArrayList<User> listuser = new ArrayList<>();
         User test1 = new User("TEST","V","L",2,19);
         listuser.add(test1);
+
+        ArrayList<Purchase> listpurchar = new ArrayList<>();
+
 
         IMenu help = new HelpManager();
         help.helpManager();
@@ -33,7 +40,7 @@ public class Main {
             Scanner sc = new Scanner(System.in);
             String input = sc.nextLine();
             FunctionalManager test = new FunctionalManager();
-            test.gestionCommande(input,listuser,listeAction,listpurchar);
+            test.gestionCommande(input,listuser,listeAction,listpurchar,listsellpurchar);
         }
     }
 }

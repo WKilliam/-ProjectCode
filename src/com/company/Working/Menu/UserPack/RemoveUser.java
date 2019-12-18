@@ -48,9 +48,14 @@ public class RemoveUser implements IMenu {
                     String surnamevalue = listedemot.get(1);
                     for (int i = 0; i < list.size(); i++) {
                         if (list.get(i).getName().equals(namevalue) && list.get(i).getSurname().equals(surnamevalue)) {
-                            System.out.println(list.get(i).getName() + " " + list.get(i).getSurname() + " is delete ");
-                            list.remove(i);
-                            exit = clone.leaveQ();
+                            if(list.get(i).getActionHas().size()==0) {
+                                System.out.println(list.get(i).getName() + " " + list.get(i).getSurname() + " is delete ");
+                                list.remove(i);
+                                exit = clone.leaveQ();
+                            }else{
+                                System.out.println("SORRY YOUR USER SELECTED HAVE PURCHASE ACTION ACTIVATE ");
+                                throw new RemoveException();
+                            }
                         } else {
                             System.out.println(" his user not existed in data base");
                             throw new RemoveException();
@@ -97,6 +102,16 @@ public class RemoveUser implements IMenu {
 
     @Override
     public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
 
     }
 

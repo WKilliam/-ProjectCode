@@ -41,7 +41,7 @@ public class CreateAction implements IMenu {
                    try {
 
                        int price = Integer.parseInt(pricesta);
-                       ActionWallStreet act = new ActionWallStreet(name, id, false, price);
+                       ActionWallStreet act = new ActionWallStreet(name, id, price);
                        action.add(act);
                        System.out.println("CREATE SUCCES");
                        exit = clone.leaveQ();
@@ -86,6 +86,16 @@ public class CreateAction implements IMenu {
 
     @Override
     public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
 
     }
 

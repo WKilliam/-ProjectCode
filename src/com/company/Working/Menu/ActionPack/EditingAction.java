@@ -119,6 +119,16 @@ public class EditingAction implements IMenu {
 
     }
 
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
+
+    }
+
 
     @Override
     public void helpManager() {

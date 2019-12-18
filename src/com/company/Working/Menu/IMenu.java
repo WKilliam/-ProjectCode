@@ -36,4 +36,8 @@ public interface IMenu {
 
     public void listeActionPrint(ArrayList<ActionWallStreet> action);
 
+    public void helplistPurchase(ArrayList<Purchase> purchases);
+
+    public void addPurchase(ArrayList<Purchase> purchases,int day,int month,int year,ActionWallStreet actionWallStreet,User user) throws EditingException;
+
 }

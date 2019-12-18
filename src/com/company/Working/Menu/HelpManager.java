@@ -1,5 +1,6 @@
 package com.company.Working.Menu;
 
+import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
 import com.company.Working.Obeject.User;
@@ -43,6 +44,7 @@ public class HelpManager implements IMenu {
 
     }
 
+
     @Override
     public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
 
@@ -55,6 +57,11 @@ public class HelpManager implements IMenu {
 
     @Override
     public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
 
     }
 
@@ -82,6 +89,18 @@ public class HelpManager implements IMenu {
     @Override
     public void Buy(ArrayList<ActionWallStreet> action,ArrayList<User> user, ArrayList<Purchase>purchases) {
 
+        System.out.println("    HERE IS THE LIST OF POTENTIAL BUYERS AND THEIR PURCHASE IN POSSESSION :      ");
+        for (int i = 0; i < user.size() ; i++) {
+            System.out.println("NAME USER        : "+  user.get(i).getName());
+            System.out.println("SURNAME USER     : "+  user.get(i).getSurname());
+            System.out.println("            *****           ");
+        }
+        for (int i = 0; i < action.size(); i++) {
+            System.out.println("ACTION WALL STREET ON THE MARKET    : "+action.get(i).getActionW());
+            System.out.println("ID_ACTION WALL STREET ON THE MARKET : "+action.get(i).getiDlocalization());
+        }
+        System.out.println("HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT : ");
+        System.out.println("NAMEUSER_SURNAME_IDACTION  ");
     }
 
     @Override
@@ -98,6 +117,17 @@ public class HelpManager implements IMenu {
     @Override
     public void editingU(ArrayList<User> listuser) {
 
+    }
+
+    public void addPurchase(ArrayList<Purchase> purchases,int day,int month,int year,ActionWallStreet actionWallStreet,User user) throws EditingException {
+
+        Purchase pur = new Purchase(user, actionWallStreet,year, day, month);
+        purchases.add(pur);
+        user.setActionHas(pur);
+        System.out.println(user.getName() + " NAME : " + user.getSurname() + "\n" +
+                " BUY : " + actionWallStreet.getActionW() + " ID : " + actionWallStreet.getiDlocalization() + "\n" +
+                " AND USER HAVE :" + user.getActionHas() + "\n"
+                + " DATE :" + pur.getDatebuyday() + "/" + pur.getDatebuymouth() + "/" + pur.getDatebuyyear());
     }
 
 

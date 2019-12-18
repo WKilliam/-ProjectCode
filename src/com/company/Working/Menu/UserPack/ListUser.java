@@ -92,4 +92,14 @@ public class ListUser implements IMenu {
     public void listeActionPrint(ArrayList<ActionWallStreet> action) {
 
     }
+
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
+
+    }
 }
