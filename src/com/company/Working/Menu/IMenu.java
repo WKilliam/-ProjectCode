@@ -2,6 +2,7 @@ package com.company.Working.Menu;
 
 import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.IdException;
+import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
@@ -24,7 +25,7 @@ public interface IMenu {
 
     public void createAction(ArrayList<ActionWallStreet> action) throws IdException;
 
-    public void Buy(ArrayList<ActionWallStreet>action, ArrayList<User>user, ArrayList<Purchase>purchases) throws EditingException;
+    public void Buy(ArrayList<ActionWallStreet>action, ArrayList<User>user, ArrayList<Purchase>purchases) throws EditingException, OldException;
 
     public void editingAction(ArrayList<ActionWallStreet> listaction);
 
@@ -38,6 +39,8 @@ public interface IMenu {
 
     public void helplistPurchase(ArrayList<Purchase> purchases);
 
-    public void addPurchase(ArrayList<Purchase> purchases,int day,int month,int year,ActionWallStreet actionWallStreet,User user) throws EditingException;
+    public void addPurchase(ArrayList<Purchase> purchases,int day,int month,int year,ActionWallStreet actionWallStreet,User user) throws EditingException, OldException;
+
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist) throws EditingException, OldException;
 
 }

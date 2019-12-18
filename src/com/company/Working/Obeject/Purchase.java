@@ -1,6 +1,7 @@
 package com.company.Working.Obeject;
 
 import com.company.Working.ExceptionProgramme.EditingException;
+import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.Menu.HelpManager;
 import com.company.Working.Menu.IMenu;
 
@@ -20,12 +21,11 @@ public class Purchase {
     private Integer datesellyear;
     private String namepurchase;
     private String idAction;
+    private boolean buyOrSell;
 
 
-    public Purchase(User user,ActionWallStreet action,Integer datebuyyear,Integer datebuyday,Integer datebuymouth) throws EditingException {
+    public Purchase(User user,ActionWallStreet action,Integer datebuyyear,Integer datebuyday,Integer datebuymouth) throws EditingException, OldException {
         this.action=action;
-
-        IMenu help = new HelpManager();
 
         this.datebuyday = datebuyday;
         this.datebuymouth = datebuymouth;
@@ -44,6 +44,7 @@ public class Purchase {
         this.datesellyear=9999;
         this.namepurchase=coderambom();
 
+        this.buyOrSell = true;
     }
 
     private String coderambom(){
@@ -116,5 +117,61 @@ public class Purchase {
 
     public Integer getDatebuyyear() {
         return datebuyyear;
+    }
+
+    public boolean isBuyOrSell() {
+        return buyOrSell;
+    }
+
+    public void setBuyOrSell(boolean buyOrSell) {
+        this.buyOrSell = buyOrSell;
+    }
+
+    public void setDatesellday(Integer datesellday) {
+        this.datesellday = datesellday;
+    }
+
+    public void setUser(User user) {
+        this.user = user;
+    }
+
+    public void setDatesellmonth(Integer datesellmonth) {
+        this.datesellmonth = datesellmonth;
+    }
+
+    public void setDatesellyear(Integer datesellyear) {
+        this.datesellyear = datesellyear;
+    }
+
+    public void setAction(ActionWallStreet action) {
+        this.action = action;
+    }
+
+    public void setDatebuyday(Integer datebuyday) {
+        this.datebuyday = datebuyday;
+    }
+
+    public void setDatebuymouth(Integer datebuymouth) {
+        this.datebuymouth = datebuymouth;
+    }
+
+    public void setDatebuyyear(Integer datebuyyear) {
+        this.datebuyyear = datebuyyear;
+    }
+
+    public void setIdAction(String idAction) {
+        this.idAction = idAction;
+    }
+
+    public void setNamepurchase(String namepurchase) {
+        this.namepurchase = namepurchase;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setUserSURname(String userSURname) {
+        this.userSURname = userSURname;
     }
 }

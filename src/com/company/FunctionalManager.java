@@ -2,11 +2,13 @@ package com.company;
 
 import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.IdException;
+import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Menu.ActionPack.CreateAction;
 import com.company.Working.Menu.ActionPack.EditingAction;
 import com.company.Working.Menu.ActionPack.ListAction;
 import com.company.Working.Menu.ActionPack.RemoveAction;
+import com.company.Working.Menu.PurchasePack.BuyAction;
 import com.company.Working.Menu.PurchasePack.ListPurchase;
 import com.company.Working.Menu.UserPack.EditingUser;
 import com.company.Working.Menu.UserPack.ListUser;
@@ -21,7 +23,7 @@ import java.util.ArrayList;
 
 public class FunctionalManager {
 
-    public void gestionCommande(String input, ArrayList<User> userlist, ArrayList<ActionWallStreet> action, ArrayList<Purchase> purchalist,ArrayList<Purchase> sellpurchalist) throws Exception, EditingException, RemoveException, IdException {
+    public void gestionCommande(String input, ArrayList<User> userlist, ArrayList<ActionWallStreet> action, ArrayList<Purchase> purchalist,ArrayList<Purchase> sellpurchalist) throws Exception, EditingException, RemoveException, IdException, OldException {
 
         IMenu listeAction = new ListAction();
         IMenu help = new HelpManager();
@@ -34,7 +36,12 @@ public class FunctionalManager {
         IMenu removeAct = new RemoveAction();
         IMenu listUserprint = new ListUser();
         IMenu listPurchase = new ListPurchase();
+        IMenu sell = new SellPurchase();
         switch (input){
+            case"SELL PURCHASE":
+                sell.sellPurchasemode(purchalist);
+                help.helpManager();
+                break;
             case"REMOVE ACTION":
                 removeAct.removeAction(action,userlist,purchalist);
                 help.helpManager();
@@ -75,7 +82,7 @@ public class FunctionalManager {
                 listUserprint.listUserCall(userlist);
                 help.helpManager();
                 break;
-            case"CREATE USER":
+            case"C":
                 createuser.createUsersup(userlist);
                 help.helpManager();
                 break;

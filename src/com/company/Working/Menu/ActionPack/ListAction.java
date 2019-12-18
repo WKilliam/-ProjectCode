@@ -88,4 +88,9 @@ public class ListAction implements IMenu {
     public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
 
     }
+
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist) throws EditingException {
+
+    }
 }

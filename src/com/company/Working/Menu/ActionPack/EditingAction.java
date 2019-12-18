@@ -129,6 +129,11 @@ public class EditingAction implements IMenu {
 
     }
 
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist) throws EditingException {
+
+    }
+
 
     @Override
     public void helpManager() {

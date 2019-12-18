@@ -1,6 +1,7 @@
 package com.company.Working.Menu;
 
 import com.company.Working.ExceptionProgramme.EditingException;
+import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.Obeject.ActionWallStreet;
 import com.company.Working.Obeject.Purchase;
 import com.company.Working.Obeject.User;
@@ -13,24 +14,13 @@ public class HelpManager implements IMenu {
 
         System.out.println("                                 POSSIBLE ORDERS ARE :                                      ");
         System.out.println("********************************************************************************************");
-
-        System.out.println("*    CREATE ACTION         **    CREATE USER           *");
-        System.out.println("*    LIST ACTION           **    LIST USER             *");
+        System.out.println("*    CREATE ACTION         **    CREATE USER           **    CREATE PURCHASE       *");
+        System.out.println("*    LIST ACTION           **    LIST USER             **    LIST PURCHASE         *");
         System.out.println("*    EDITING ACTION        **    EDITING USER          *");
         System.out.println("*    REMOVE ACTION         **    REMOVE USER           *");
-
-        System.out.println("*    REMOVE USER           *");
-
-        System.out.println("*                    *                     *                       *                       *");
-        System.out.println("*                    *                     *                       *                       *");
-        System.out.println("*      LIST PURCHASE *    CREATE USER      *     EDITING USER      *     REMOVE USER       *");
-        System.out.println("*      USER LIST     *    BUY PURCHASEE    *     EDITING PURCHASE  *                       *");
-        System.out.println("*      HELP          *                     *                       *                       *");
-        System.out.println("*      TO LEAVE      *                     *                       *                       *");
-        System.out.println("*                    *                     *                       *                       *");
-        System.out.println("*                    *                     *                       *                       *");
+        System.out.println("*    LIST PURCHASE         *");
+        System.out.println("*    CREATE PURCHASE       *");
         System.out.println("********************************************************************************************");
-
     }
 
 
@@ -119,7 +109,7 @@ public class HelpManager implements IMenu {
 
     }
 
-    public void addPurchase(ArrayList<Purchase> purchases,int day,int month,int year,ActionWallStreet actionWallStreet,User user) throws EditingException {
+    public void addPurchase(ArrayList<Purchase> purchases,int day,int month,int year,ActionWallStreet actionWallStreet,User user) throws EditingException, OldException {
 
         Purchase pur = new Purchase(user, actionWallStreet,year, day, month);
         purchases.add(pur);
@@ -128,6 +118,11 @@ public class HelpManager implements IMenu {
                 " BUY : " + actionWallStreet.getActionW() + " ID : " + actionWallStreet.getiDlocalization() + "\n" +
                 " AND USER HAVE :" + user.getActionHas() + "\n"
                 + " DATE :" + pur.getDatebuyday() + "/" + pur.getDatebuymouth() + "/" + pur.getDatebuyyear());
+    }
+
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist) throws EditingException {
+
     }
 
 

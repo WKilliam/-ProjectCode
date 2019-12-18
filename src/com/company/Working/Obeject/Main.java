@@ -22,12 +22,10 @@ public class Main {
 
 
         ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
-        ActionWallStreet act = new ActionWallStreet("toto","FF",88);
-        listeAction.add(act);
+
 
         ArrayList<User> listuser = new ArrayList<>();
-        User test1 = new User("TEST","V","L",2,19);
-        listuser.add(test1);
+
 
         ArrayList<Purchase> listpurchar = new ArrayList<>();
 

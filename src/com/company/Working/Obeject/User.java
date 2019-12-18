@@ -101,4 +101,12 @@ public class User {
     public void setDepartement(Integer departement) {
         this.departement = departement;
     }
+
+    public void setallstatus(){
+        this.name=null;
+        this.surname=null;
+        this.fonction=null;
+        this.departement=null;
+        this.old=null;
+    }
 }

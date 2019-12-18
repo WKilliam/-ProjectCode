@@ -2,6 +2,7 @@ package com.company.Working.Menu.UserPack;
 
 import com.company.Working.Clone.CloneFunction;
 import com.company.Working.Clone.IClone;
+import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.ExceptionProgramme.TextException;
 import com.company.Working.Menu.HelpManager;
@@ -62,9 +63,9 @@ public class CreateUser implements IMenu {
                 }
                     int depart = Integer.parseInt(localization);
                     int oldlace = Integer.parseInt(old);
-                    createUser(name,surname,function,oldlace,depart,userlist);
+                    User neuwUser = new User(name,surname,function,depart,oldlace);
+                    userlist.add(neuwUser);
                     System.out.println("USER CREATED SUCCES");
-
                 }
                 catch (OldException e) {
                     System.out.println("OLD IS NOT ACCEPTED THIS A LIMITE 18 <=> 100");
@@ -137,6 +138,11 @@ public class CreateUser implements IMenu {
 
     @Override
     public void addPurchase(ArrayList<Purchase> purchases, int day, int month, int year, ActionWallStreet actionWallStreet, User user) {
+
+    }
+
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist) throws EditingException {
 
     }
 
