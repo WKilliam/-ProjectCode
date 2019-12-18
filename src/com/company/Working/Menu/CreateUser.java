@@ -1,5 +1,7 @@
 package com.company.Working.Menu;
 
+import com.company.Working.Clone.CloneFunction;
+import com.company.Working.Clone.IClone;
 import com.company.Working.ExceptionProgramme.OldException;
 import com.company.Working.ExceptionProgramme.TextException;
 import com.company.Working.Obeject.ActionWallStreet;
@@ -25,6 +27,7 @@ public class CreateUser implements IMenu {
      */
     public void createUsersup(ArrayList<User> userlist) {
 
+        IClone clone = new CloneFunction();
         IMenu help = new HelpManager();
         System.out.println("     SELECT YOUR CREATE USER :                                      ");
         System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :                ");
@@ -36,11 +39,7 @@ public class CreateUser implements IMenu {
 
             Scanner sc = new Scanner(System.in);
             String scan = sc.nextLine();
-            String tab[] = scan.split("_");
-            ArrayList<String> text = new ArrayList<>();
-            for (int i = 0; i <tab.length ; i++) {
-                text.add(tab[i]);
-            }
+            ArrayList<String> text = clone.takeChain(scan);
             if(text.size()==5){
                 String name = text.get(0);
                 String surname = text.get(1);
@@ -73,18 +72,7 @@ public class CreateUser implements IMenu {
         }catch (Exception e){
             System.out.println(" THIS ERROR ON INPUT TEXT");
         }
-            System.out.println("YOU HAVE FINISH ? Y / N ");
-            Scanner rep = new Scanner(System.in);
-            String s3 = rep.nextLine();
-            if (s3.equals("Y")) {
-                exit = false;
-            }
-            if (s3.equals("N")){
-                break;
-            }
-            else if(s3.equals("N")){
-
-            }
+            exit = clone.leaveQ();
         }while (exit==true);
         help.helpManager();
     }

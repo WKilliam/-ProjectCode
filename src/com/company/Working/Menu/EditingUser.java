@@ -1,5 +1,7 @@
 package com.company.Working.Menu;
 
+import com.company.Working.Clone.CloneFunction;
+import com.company.Working.Clone.IClone;
 import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.TextException;
 import com.company.Working.Obeject.ActionWallStreet;
@@ -13,28 +15,23 @@ public class EditingUser implements IMenu {
 
     public void editingU(ArrayList<User> listuser) throws EditingException {
 
+
         IMenu helpEditing = new HelpManager();
 
-        for (int i = 0; i < listuser.size() ; i++) {
-            System.out.println("     SELECT YOUR EDITING USER :                                     ");
-            System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :                ");
-            System.out.println("     NAME_SURNAME                                                   ");
-            System.out.println(" "+listuser.get(i).getName()+"_"+listuser.get(i).getSurname()+"_"+listuser.get(i).getFonction()+"_"+listuser.get(i).getDepartement()+"_"+listuser.get(i).getOld());
-        }
         try{
             boolean exit = true;
-
+            IClone clone = new CloneFunction();
             do{
+                for (int i = 0; i < listuser.size() ; i++) {
+                    System.out.println("     SELECT YOUR EDITING USER :                                     ");
+                    System.out.println("     HERE IS THE FORMAT TO ENTER PLEASE RESPECT IT :                ");
+                    System.out.println("     NAME_SURNAME                                                   ");
+                    System.out.println(" "+listuser.get(i).getName()+"_"+listuser.get(i).getSurname()+"_"+listuser.get(i).getFonction()+"_"+listuser.get(i).getDepartement()+"_"+listuser.get(i).getOld());
+                }
 
                 Scanner select = new Scanner(System.in);
                 String s = select.nextLine();
-
-                String tab[] = s.split("_");
-                ArrayList<String> listmots = new ArrayList<>();
-
-                for (int i = 0; i <tab.length ; i++) {
-                    listmots.add(tab[i]);
-                }
+                ArrayList<String> listmots = clone.takeChain(s);
                 if(listmots.size()<=1&&listmots.size()>=3){
                     System.out.println("PROBLEME INPUT VALUE ");
                 }else{
@@ -57,13 +54,7 @@ public class EditingUser implements IMenu {
                                 Scanner lect1 = new Scanner(System.in);
                                 String s3 = lect1.nextLine();
 
-                                String tab2[]=s3.split("_");
-
-                                ArrayList<String> listmots2 = new ArrayList<>();
-
-                                for (int j = 0; j <tab2.length ; j++) {
-                                    listmots2.add(tab2[j]);
-                                }
+                                ArrayList<String> listmots2 = clone.takeChain(s);
                                 System.out.println(listmots2);
 
                                 String name = listmots2.get(0);
@@ -76,9 +67,6 @@ public class EditingUser implements IMenu {
 
                                 String s8 = listmots2.get(4);
 
-
-
-                                int old     = Integer.parseInt(s8);
                                 for (int j = 0; j <listuser.size() ; j++) {
                                     User user = listuser.get(i);
                                     if(user.getSurname().equals(surname)&& user.getName().equals(name)){
@@ -147,16 +135,7 @@ public class EditingUser implements IMenu {
                         }
                     }
                 }
-                System.out.println(" YOU HAVE FINISH ? Y / N ");
-                Scanner rep = new Scanner(System.in);
-                String s3 = rep.nextLine();
-                if (s3.equals("Y")) {
-                    exit = false;
-                    break;
-                }
-                else if(s3.equals("N")){
-                    break;
-                }
+                exit = clone.leaveQ();
             }while (exit==true);
         }catch (Exception | TextException e){
             System.out.println("THIS VALEUR OF INPUT IS NOT GOOD ");

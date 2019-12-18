@@ -19,6 +19,7 @@ public class Main {
         ArrayList<User> listuser = new ArrayList<>();
         ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
         ArrayList<Purchase> listpurchar = new ArrayList<>();
+
         ActionWallStreet ac = new ActionWallStreet("MOBILE","FFT",true,20);
         listeAction.add(ac);
         User test1 = new User("TEST","V","L",2,19);

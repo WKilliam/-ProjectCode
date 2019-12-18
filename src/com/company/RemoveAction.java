@@ -1,5 +1,7 @@
 package com.company;
 
+import com.company.Working.Clone.CloneFunction;
+import com.company.Working.Clone.IClone;
 import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Obeject.ActionWallStreet;
@@ -15,30 +17,40 @@ public class RemoveAction implements IMenu {
 
     public void removeAction(ArrayList<ActionWallStreet> action,ArrayList<User> user,ArrayList<Purchase> purchase){
         IMenu help = new HelpManager();
-        System.out.println("ID REMOVE ?");
-        for (int i = 0; i <action.size() ; i++) {
-            System.out.println(i+" ID STATUS : "+action.get(i).getiDlocalization());
-        }
-        try{
+        IClone clone = new CloneFunction();
 
-            System.out.println("WHRITE ID FOR A REMOVE ");
-            Scanner sc1 = new Scanner(System.in);
-            String index = sc1.nextLine();
-
-            for (int i = 0; i <action.size() ; i++) {
-                ActionWallStreet actionWallStreet = action.get(i);
-                if(actionWallStreet.getiDlocalization().equals(index)){
-                    System.out.println(action.get(i).getiDlocalization() +" is delete ");
-                    action.remove(i);
-                }
-                else {
-                    System.out.println("THIS ID NOT EXISTED IN DATA BASE");
-                }
+        boolean exit = true;
+        do {
+            if(action.size()==0){
+                System.out.println(" SORRY YOU DON'T HAVE ACTION IN WALL STREET !!!");
+                exit = clone.leaveQ();
             }
+            for (int i = 0; i <action.size() ; i++) {
+                System.out.println(i+" ID STATUS : "+action.get(i).getiDlocalization());
+            }
+            try{
+                System.out.println("ID REMOVE ?");
+                System.out.println("WHRITE ID FOR A REMOVE ");
+                Scanner sc1 = new Scanner(System.in);
+                String index = sc1.nextLine();
+                for (int i = 0; i <action.size() ; i++) {
+                    ActionWallStreet actionWallStreet = action.get(i);
+                    if(actionWallStreet.getiDlocalization().equals(index)){
+                        System.out.println(action.get(i).getiDlocalization() +" is delete ");
+                        action.remove(i);
+                        exit = clone.leaveQ();
+                    }
+                    else {
+                        System.out.println();
+                        throw new Exception();
+                    }
+                }
+            }catch (Exception e){
+                System.out.println("THIS ID NOT EXISTED IN DATA BASE");
+                exit = clone.leaveQ();
+            }
+        }while (exit == true);
 
-        }catch (Exception e){
-
-        }
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.company.Working.Menu;
 
+import com.company.Working.Clone.CloneFunction;
+import com.company.Working.Clone.IClone;
 import com.company.Working.ExceptionProgramme.EditingException;
 import com.company.Working.ExceptionProgramme.RemoveException;
 import com.company.Working.Menu.HelpManager;

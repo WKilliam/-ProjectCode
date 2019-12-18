@@ -14,6 +14,7 @@ public class Purchase {
     private Integer datebuymouth;
     private Integer datebuyday;
     private Integer datesell;
+    private String namepurchase;
 
 
     public Purchase(User user,ActionWallStreet action,Integer datebuyyear,Integer datebuyday,Integer datebuymouth) throws EditingException {
@@ -29,6 +30,7 @@ public class Purchase {
         this.userrname=this.user.getName();
         this.usersurname=this.user.getSurname();
         this.datesell=null;
+        this.namepurchase=" ACTION BUY ";
     }
 
     public ActionWallStreet getAction() {
