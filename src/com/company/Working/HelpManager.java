@@ -88,6 +88,11 @@ public class HelpManager implements IMenu {
 
     }
 
+    @Override
+    public void listUserCall(ArrayList<User> listuser) {
+
+    }
+
 
     /**
      * Print characteristic Action Editing

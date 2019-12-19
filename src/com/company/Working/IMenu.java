@@ -32,4 +32,10 @@ public interface IMenu {
 
     public void removeUser(ArrayList<User> list,ArrayList<Purchase>purchases) throws Exception;
 
+    /**
+     * print list user
+     * @param listuser list user
+     */
+    public void listUserCall(ArrayList<User> listuser);
+
 }

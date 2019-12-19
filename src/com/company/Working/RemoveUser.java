@@ -1,6 +1,5 @@
 package com.company.Working;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -21,8 +20,15 @@ public class RemoveUser implements IMenu {
 
     }
 
+    /**
+     * remove user in list
+     * @param list list of user
+     * @param purchase purchase list for check
+     * @throws Exception
+     */
     public void removeUser(ArrayList<User> list,ArrayList<Purchase>purchase) throws Exception {
 
+        IMenu remove = new RemoveUser();
         boolean exit = true;
         do{
             try{
@@ -36,35 +42,25 @@ public class RemoveUser implements IMenu {
                 Scanner sc = new Scanner(System.in);
                 String s = sc.nextLine();
                 ArrayList<String> strings = clone.takeChain(s);
-                String s1 = strings.get(0);
-                String s2 = strings.get(1);
+                String nameindex = strings.get(0);
+                String surnameindex = strings.get(1);
                 if(strings.size() !=2){
                     throw new Exception("input is not valid");
                 }
 
                 for (int j = 0; j <purchase.size() ; j++) {
                     Purchase purchase1 = purchase.get(j);
-                    boolean equals = purchase1.getUserName().equals(s1);
-                    boolean equals1 = purchase1.getUserSURname().equals(s2);
-                    if (purchase1.getUserName().equals(s1)&&purchase1.getUserSURname().equals(s2)){
+                    if (purchase1.getUserName().equals(nameindex)&&purchase1.getUserSURname().equals(surnameindex)){
                         throw new Exception("This User Have purchase remove is not possible ");
                     }
                 }
-                for (int i = 0; i <size ; i++) {
-
-                    User user = list.get(i);
-                    System.out.println(user);
-
-                    if (user.getName().equals(s1) && user.getSurname().equals(s2)) {
-                        throw new Exception("User ont existed");
-                    }
-                    else {
-                        System.out.println(user.getName() + " " + user.getSurname() + " is delete ");
-                        list.remove(i);
-                        break;
-                    }
+                try {
+                    User ckeckuserlist = ckeckuserlist(list, nameindex, surnameindex);
+                    list.remove(ckeckuserlist.getName());
+                    System.out.println(ckeckuserlist + " Is Delete");
+                }catch (Exception e){
+                    System.out.println("User is not existed");
                 }
-
             }catch (Exception e){
                 System.out.println(e.getMessage());
             }
@@ -79,6 +75,36 @@ public class RemoveUser implements IMenu {
             }
         }while (exit==true);
     }
+
+    @Override
+    public void listUserCall(ArrayList<User> listuser) {
+
+    }
+
+    /**
+     * return user for add list
+     * @param list list user checking
+     * @param name name id
+     * @param surname surmane id
+     * @return
+     * @throws Exception
+     */
+    public User ckeckuserlist(ArrayList<User> list, String name, String surname) throws Exception {
+
+        int size = list.size();
+        for (int i = 0; i <= size; i++) {
+            User user = list.get(i);
+            if (user.getName().equals(name) && user.getSurname().equals(surname)) {
+                return user;
+            }
+        }
+        throw new Exception("User existed");
+    }
+
+
+
+
+
 /*
         boolean exit = true;
         do{

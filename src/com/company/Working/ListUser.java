@@ -3,7 +3,7 @@ package com.company.Working;
 import java.io.IOException;
 import java.util.ArrayList;
 
-public class ListUser {
+public class ListUser implements IMenu{
 
 
     public void listUserCall(ArrayList<User> listuser){
@@ -30,5 +30,25 @@ public class ListUser {
                 }
             }
         }
+    }
+
+    @Override
+    public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public void createUser(ArrayList<User> userlist) {
+
+    }
+
+    @Override
+    public void editingUser(ArrayList<User> listuser) {
+
+    }
+
+    @Override
+    public void removeUser(ArrayList<User> list, ArrayList<Purchase> purchases) throws Exception {
+
     }
 }

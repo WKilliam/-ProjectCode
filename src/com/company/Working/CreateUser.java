@@ -84,6 +84,11 @@ public class CreateUser implements IMenu{
 
     }
 
+    @Override
+    public void listUserCall(ArrayList<User> listuser) {
+
+    }
+
 
     @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {
