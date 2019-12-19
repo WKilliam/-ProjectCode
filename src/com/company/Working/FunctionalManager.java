@@ -31,14 +31,14 @@ public class FunctionalManager {
          * @param
          * @param
          */
-        //IMenu listeAction = new ListAction();
+        IMenu listeAction = new ListAction();
         IMenu help = new HelpManager();
         IMenu createuser =new CreateUser();
         IMenu editing = new EditingUser();
         IMenu remove = new RemoveUser();
         IMenu actioncre = new CreateAction();
         //IMenu buy = new BuyAction();
-        //IMenu editA = new EditingAction();
+        IMenu editA = new EditingAction();
         //IMenu removeAct = new RemoveAction();
         IMenu listUserprint = new ListUser();
         //IMenu listPurchase = new ListPurchase();
@@ -63,15 +63,23 @@ public class FunctionalManager {
                 break;
             case"list purchase":
                 listPurchase.helplistPurchase(purchalist);
-                break;
-            case"create purchase":
-                buy.Buy(action,userlist,purchalist);
-                help.helpManager();
-                break;
-            case"action list":
-                listeAction.listeActionPrint(action);
-                help.helpManager();
                 break;*/
+            case"editing action":
+                editA.editingAction(action,purchalist,userlist);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case "ea":
+                editA.editingAction(action,purchalist,userlist);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"list action":
+                listeAction.listeActionPrint(action);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"la":
+                listeAction.listeActionPrint(action);
+                help.helpManager(purchalist,userlist,action);
+                break;
             case"create action":
                 actioncre.createAction(action);
                 help.helpManager(purchalist,userlist,action);

@@ -16,7 +16,7 @@ public class Purchase {
     private Integer datesellyear;
     private String namepurchase;
     private String idAction;
-    private boolean buyOrSell;
+    private String buyOrSell;
 
     /**
      * This object corresponds to the characteristic of a user
@@ -27,6 +27,8 @@ public class Purchase {
      * @param datebuymouth characteristic month date
      */
     public Purchase(User user,ActionWallStreet action,Integer datebuyyear,Integer datebuyday,Integer datebuymouth)  {
+
+
         this.action=action;
 
         this.datebuyday = datebuyday;
@@ -45,8 +47,16 @@ public class Purchase {
         this.datesellmonth=12;
         this.datesellyear=9999;
         this.namepurchase=coderambom();
+        this.buyOrSell=action.getTake();
 
-        this.buyOrSell = true;
+    }
+
+    public String getBuyOrSell() {
+        return buyOrSell;
+    }
+
+    public void setBuyOrSell(String buyOrSell) {
+        this.buyOrSell = buyOrSell;
     }
 
     private String coderambom(){
@@ -165,20 +175,7 @@ public class Purchase {
     public Integer getDatebuyyear() {
         return datebuyyear;
     }
-    /**
-     * Access to the variable this.buyOrSell
-     * @return buyOrSell
-     */
-    public boolean isBuyOrSell() {
-        return buyOrSell;
-    }
-    /**
-     * Access to the variable this.buyOrSell with buyOrSell
-     * @return buyOrSell
-     */
-    public void setBuyOrSell(boolean buyOrSell) {
-        this.buyOrSell = buyOrSell;
-    }
+
     /**
      * Access to the variable this.datesellday with datesellday
      * @return datesellday

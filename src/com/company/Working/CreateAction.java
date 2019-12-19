@@ -9,7 +9,7 @@ public class CreateAction implements IMenu{
 
 
     /**
-     * this function create action 
+     * this function create action
      * @param action list action
      */
     public void createAction(ArrayList<ActionWallStreet> action) {
@@ -59,6 +59,22 @@ public class CreateAction implements IMenu{
                    exit = false;
                }
            } while (exit == true);
+    }
+
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction, ArrayList<Purchase> purchases, ArrayList<User> users) throws Exception {
+
+    }
+
+
+    @Override
+    public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public User ckeckuserlist(ArrayList<User> list, String name, String surname) throws Exception {
+        return null;
     }
 
     @Override

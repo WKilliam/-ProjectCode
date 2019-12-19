@@ -64,7 +64,7 @@ public class BuyAction {
                                     }
                                     for (int k = 0; k < sizePurcha; k++) {
                                         Purchase purchase = purchaseslist.get(k);
-                                        if (purchase.getIdAction().equals(idAction) && purchase.isBuyOrSell()) {
+                                        if (purchase.getIdAction().equals(idAction) && purchase.getBuyOrSell().equals("New Object")) {
                                             System.out.println("this purchase belongs to someone");
                                             //            throw new Exception("this purchase belongs to someone");
                                         }
@@ -76,7 +76,7 @@ public class BuyAction {
                                             purchase.setUser(user);
                                             purchase.setUserName(user.getName());
                                             purchase.setUserSURname(user.getSurname());
-                                            purchase.setBuyOrSell(true);
+                                            purchase.setBuyOrSell("New Object");
                                             purchase.setDatesellday(day);
                                             purchase.setDatesellmonth(month);
 

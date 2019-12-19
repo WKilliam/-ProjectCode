@@ -7,6 +7,7 @@ public class ActionWallStreet {
     private Integer priceOpen;
     private Integer priceClose;
     private String iDlocalization;
+    private String take;
 
     /**
      * This object corresponds to the characteristic of a ActionWallStreet
@@ -18,9 +19,23 @@ public class ActionWallStreet {
 
         this.actionW=actionW;
         this.priceOpen=price;
-        this.priceClose = null;
+        this.priceClose = -1;
         this.iDlocalization=iDlocalization;
+        this.take="Object Buy";//"Buy";
 
+    }
+
+    public String getTake() {
+        return take;
+    }
+    public void setbuyTake() {
+        String take = "Object Buy";
+        this.take = take;
+    }
+
+    public void setSellTake() {
+        String take = "Item For Sale";
+        this.take = take;
     }
 
     /**
@@ -78,4 +93,11 @@ public class ActionWallStreet {
         this.actionW = actionW;
     }
 
+    /**
+     * Access to the variable this.priceClose
+     * return priceClose
+     */
+    public Integer getPriceClose() {
+        return priceClose;
+    }
 }

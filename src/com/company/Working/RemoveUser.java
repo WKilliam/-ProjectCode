@@ -88,6 +88,18 @@ public class RemoveUser implements IMenu {
 
     }
 
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction, ArrayList<Purchase> purchases, ArrayList<User> users) throws Exception {
+
+    }
+
+
+
+    @Override
+    public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
     /**
      * return user for add list
      * @param list list user checking

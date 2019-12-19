@@ -99,6 +99,21 @@ public class HelpManager implements IMenu {
 
     }
 
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction, ArrayList<Purchase> purchases,ArrayList<User>users) {
+                System.out.println("This Is Format of editing Write : "+"\n" + "NameA,iD,PriceO,PriceC  <= ");
+    }
+
+    @Override
+    public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public User ckeckuserlist(ArrayList<User> list, String name, String surname) throws Exception {
+        return null;
+    }
+
 
     /**
      * Print characteristic Action Editing

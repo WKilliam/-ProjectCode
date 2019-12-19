@@ -50,4 +50,26 @@ public interface IMenu {
      */
     public void createAction(ArrayList<ActionWallStreet> action);
 
+    /**
+     * editing action
+     * @param listaction list action
+     * @param purchases list purchase
+     */
+    public void editingAction(ArrayList<ActionWallStreet> listaction,ArrayList<Purchase> purchases,ArrayList<User>users) throws Exception;
+
+    /**
+     * print list action
+     * @param action list action
+     */
+    public void listeActionPrint(ArrayList<ActionWallStreet> action);
+
+    /**
+     * check user list
+     * @param list list check
+     * @param name name check
+     * @param surname surname check
+     * @return
+     * @throws Exception
+     */
+    public User ckeckuserlist(ArrayList<User> list, String name, String surname) throws Exception;
 }

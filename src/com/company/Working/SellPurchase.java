@@ -23,7 +23,7 @@ public class SellPurchase {
                 }
                 for (int i = 0; i < purchaseslist.size(); i++) {
                     Purchase purchase = purchaseslist.get(i);
-                    if (!purchase.isBuyOrSell()) {
+                    if (purchase.getBuyOrSell().equals("Object Buy")) {
                         System.out.println("DATE SELL             : " + purchase.getDatesellday() + "/" + purchase.getDatesellmonth() + "/" + purchase.getDatesellyear());
                         System.out.println("REFERENCE OF PURCHASE : " + purchase.getNamepurchase());
                         System.out.println("FORME HOLDER USER     : " + purchase.getUserName());
@@ -31,7 +31,7 @@ public class SellPurchase {
                         System.out.println("PRICE OF ACTION       : " + purchase.getAction().getPriceOpen());
                         System.out.println("DATE BUY              : " + purchase.getDatebuyday() + "/" + purchase.getDatebuymouth() + "/" + purchase.getDatebuyyear());
 
-                    }else if(purchase.isBuyOrSell()) {
+                    }else if(purchase.getBuyOrSell().equals("Item For Sale")) {
                         System.out.println("REFERENCE OF PURCHASE :" + purchase.getNamepurchase());
                         System.out.println("USER IN POSSESSION    : " + purchase.getUserName());
                         System.out.println("REFERENCE OF ACTION   : " + purchase.getIdAction());
@@ -50,7 +50,7 @@ public class SellPurchase {
                 String idAction = strings.get(0);
                 for (int i = 0; i < purchaseslist.size() ; i++) {
                     Purchase purchase = purchaseslist.get(i);
-                    if(purchase.getIdAction().equals(idAction) && purchase.isBuyOrSell()) {
+                    if(purchase.getIdAction().equals(idAction) && purchase.getBuyOrSell().equals("Object Buy")) {
 
                         int day = (int) (Math.random() * 31);
                         int month = (int) (Math.random() * 12);
@@ -58,7 +58,7 @@ public class SellPurchase {
                         purchase.setUser(usernull);
                         purchase.setUserName(usernull.getName());
                         purchase.setUserSURname(usernull.getSurname());
-                        purchase.setBuyOrSell(false);
+                        purchase.setBuyOrSell("Item For Sale");
                         purchase.setDatesellday(day);
                         purchase.setDatesellmonth(month);
 
@@ -70,7 +70,7 @@ public class SellPurchase {
                         }
                         System.out.println("sell "+purchase.getDatesellday()+"-"+purchase.getDatebuymouth()+"-"+purchase.getDatebuyyear());
                     }
-                    if(!purchase.isBuyOrSell()){
+                    if(!purchase.getBuyOrSell().equals("Object Buy")){
 
                     }else {
                         throw new Exception("THIS ACTION IS NOT BUY ");

@@ -163,6 +163,23 @@ public class EditingUser implements IMenu {
 
     }
 
+    @Override
+    public void editingAction(ArrayList<ActionWallStreet> listaction, ArrayList<Purchase> purchases, ArrayList<User> users) throws Exception {
+
+    }
+
+
+
+    @Override
+    public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public User ckeckuserlist(ArrayList<User> list, String name, String surname) throws Exception {
+        return null;
+    }
+
 
     @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {
