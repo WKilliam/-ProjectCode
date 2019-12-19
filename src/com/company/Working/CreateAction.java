@@ -5,9 +5,13 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class CreateAction  {
+public class CreateAction implements IMenu{
 
 
+    /**
+     * this function create action 
+     * @param action list action
+     */
     public void createAction(ArrayList<ActionWallStreet> action) {
         IClone clone = new CloneFunction();
        IMenu help = new HelpManager();
@@ -15,8 +19,8 @@ public class CreateAction  {
            boolean exit = true;
            do {
                try {
-               System.out.println("TO CREATE AN ACTION FOLLOWED THIS FORMAT :");
-               System.out.println("        ACTION_IDREF_PRICE                ");
+               System.out.println("To Create An Action Followed This Format :");
+               System.out.println("Actionname,Idref,Price");
                Scanner sc1 = new Scanner(System.in);
                String s = sc1.nextLine();
                ArrayList<String> listmots = clone.takeChain(s);
@@ -26,29 +30,59 @@ public class CreateAction  {
                if (listmots.size() == 3) {
                    for (int i = 0; i < action.size(); i++) {
                        if (action.get(i).getiDlocalization().equals(id)) {
-                           System.out.println("probléme");
-                           throw new Exception();
+                           throw new Exception("Action Id exist ");
                        }
                    }
                    try {
-
                        int price = Integer.parseInt(pricesta);
                        ActionWallStreet act = new ActionWallStreet(name, id, price);
                        action.add(act);
-                       System.out.println("CREATE SUCCES");
-                    //   exit = clone.leaveQ();
+                       System.out.println("create");
+                       break;
 
                    } catch (Exception e) {
-                       System.out.println("YOUR HAVE BAD INPUT");
-                       throw new Exception();
+                       throw new Exception("this price is not number");
                    }
                } else {
-                   System.out.println(" PROBLEM INPUT");
-                   throw new Exception();
+                   throw new Exception(" Probleme Input");
                }
                }catch (Exception e){
-           //        exit = clone.leaveQ();
+                   System.out.println(e.getMessage());
+               }
+               System.out.println(" continue ? y / n ");
+               Scanner rep = new Scanner(System.in);
+               String s3 = rep.nextLine();
+               if (s3.equals("y")) {
+                   exit = true;
+               }
+               if (s3.equals("n")) {
+                   exit = false;
                }
            } while (exit == true);
+    }
+
+    @Override
+    public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
+    public void createUser(ArrayList<User> userlist) {
+
+    }
+
+    @Override
+    public void editingUser(ArrayList<User> listuser, ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void removeUser(ArrayList<User> list, ArrayList<Purchase> purchases) throws Exception {
+
+    }
+
+    @Override
+    public void listUserCall(ArrayList<User> listuser) {
+
     }
 }

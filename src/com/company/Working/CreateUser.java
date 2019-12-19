@@ -75,9 +75,11 @@ public class CreateUser implements IMenu{
     }
 
     @Override
-    public void editingUser(ArrayList<User> listuser) {
+    public void editingUser(ArrayList<User> listuser, ArrayList<Purchase> purchases) {
 
     }
+
+
 
     @Override
     public void removeUser(ArrayList<User> list, ArrayList<Purchase> purchases) throws Exception {
@@ -86,6 +88,11 @@ public class CreateUser implements IMenu{
 
     @Override
     public void listUserCall(ArrayList<User> listuser) {
+
+    }
+
+    @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
 
     }
 

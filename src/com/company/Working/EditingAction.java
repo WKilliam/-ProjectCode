@@ -4,7 +4,7 @@ package com.company.Working;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class EditingAction  {
+public class EditingAction {
 
 
     public void editingAction(ArrayList<ActionWallStreet> listaction){
@@ -90,6 +90,5 @@ public class EditingAction  {
         }
 
     }
-
 
 }

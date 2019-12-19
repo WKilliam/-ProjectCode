@@ -36,7 +36,7 @@ public class FunctionalManager {
         IMenu createuser =new CreateUser();
         IMenu editing = new EditingUser();
         IMenu remove = new RemoveUser();
-        //IMenu actioncre = new CreateAction();
+        IMenu actioncre = new CreateAction();
         //IMenu buy = new BuyAction();
         //IMenu editA = new EditingAction();
         //IMenu removeAct = new RemoveAction();
@@ -71,12 +71,20 @@ public class FunctionalManager {
             case"action list":
                 listeAction.listeActionPrint(action);
                 help.helpManager();
-                break;
+                break;*/
             case"create action":
                 actioncre.createAction(action);
-                help.helpManager();
-                break;*/
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"ca":
+                actioncre.createAction(action);
+                help.helpManager(purchalist,userlist,action);
+                break;
             case"list user":
+                listUserprint.listUserCall(userlist);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"lu":
                 listUserprint.listUserCall(userlist);
                 help.helpManager(purchalist,userlist,action);
                 break;
@@ -84,12 +92,16 @@ public class FunctionalManager {
                 remove.removeUser(userlist,purchalist);
                 help.helpManager(purchalist,userlist,action);
                 break;
-            case"editing user":
-                editing.editingUser(userlist);
+            case"ru":
+                remove.removeUser(userlist,purchalist);
                 help.helpManager(purchalist,userlist,action);
                 break;
-            case"c":
-                editing.editingUser(userlist);
+            case"editing user":
+                editing.editingUser(userlist,purchalist);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"ec":
+                editing.editingUser(userlist,purchalist);
                 help.helpManager(purchalist,userlist,action);
                 break;
             case"create user":

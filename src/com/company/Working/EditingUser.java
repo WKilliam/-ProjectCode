@@ -9,7 +9,7 @@ public class EditingUser implements IMenu {
      * this function manages the entire user edit menu
      * @param listuser user list
      */
-    public void editingUser(ArrayList<User> listuser){
+    public void editingUser(ArrayList<User> listuser,ArrayList<Purchase>purchases){
 
         boolean exit = true;
         do{
@@ -60,7 +60,12 @@ public class EditingUser implements IMenu {
                                 String s7 = listmots2.get(3);
 
                                 String s8 = listmots2.get(4);
-
+                                for (int j = 0; j <purchases.size() ; j++) {
+                                    Purchase purchase1 = purchases.get(j);
+                                    if (purchase1.getUserName().equals(name)&&purchase1.getUserSURname().equals(surname)){
+                                        throw new Exception("This User Have purchase remove is not possible ");
+                                    }
+                                }
                                 for (int j = 0; j <listuser.size() ; j++) {
                                     User user = listuser.get(i);
                                     if(!user.getSurname().equals(surname)&&! user.getName().equals(name)){
@@ -150,6 +155,11 @@ public class EditingUser implements IMenu {
 
     @Override
     public void listUserCall(ArrayList<User> listuser) {
+
+    }
+
+    @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
 
     }
 

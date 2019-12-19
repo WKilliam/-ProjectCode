@@ -16,9 +16,11 @@ public class RemoveUser implements IMenu {
     }
 
     @Override
-    public void editingUser(ArrayList<User> listuser) {
+    public void editingUser(ArrayList<User> listuser, ArrayList<Purchase> purchases) {
 
     }
+
+
 
     /**
      * remove user in list
@@ -78,6 +80,11 @@ public class RemoveUser implements IMenu {
 
     @Override
     public void listUserCall(ArrayList<User> listuser) {
+
+    }
+
+    @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
 
     }
 

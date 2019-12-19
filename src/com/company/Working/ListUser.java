@@ -33,6 +33,11 @@ public class ListUser implements IMenu{
     }
 
     @Override
+    public void createAction(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {
 
     }
@@ -43,9 +48,10 @@ public class ListUser implements IMenu{
     }
 
     @Override
-    public void editingUser(ArrayList<User> listuser) {
+    public void editingUser(ArrayList<User> listuser, ArrayList<Purchase> purchases) {
 
     }
+
 
     @Override
     public void removeUser(ArrayList<User> list, ArrayList<Purchase> purchases) throws Exception {

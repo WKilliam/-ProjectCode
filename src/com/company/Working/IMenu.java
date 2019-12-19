@@ -28,7 +28,7 @@ public interface IMenu {
      * editing user
      * @param listuser user list
      */
-    public void editingUser(ArrayList<User> listuser);
+    public void editingUser(ArrayList<User> listuser,ArrayList<Purchase>purchases);
 
     public void removeUser(ArrayList<User> list,ArrayList<Purchase>purchases) throws Exception;
 
@@ -37,5 +37,17 @@ public interface IMenu {
      * @param listuser list user
      */
     public void listUserCall(ArrayList<User> listuser);
+
+    /**
+     * create action
+     * @param listaction list of action
+     */
+   // public void editingAction(ArrayList<ActionWallStreet> listaction);
+
+    /**
+     * create action in list action
+     * @param action list action
+     */
+    public void createAction(ArrayList<ActionWallStreet> action);
 
 }
