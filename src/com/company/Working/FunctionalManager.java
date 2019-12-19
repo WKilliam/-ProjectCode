@@ -37,26 +37,31 @@ public class FunctionalManager {
         IMenu editing = new EditingUser();
         IMenu remove = new RemoveUser();
         IMenu actioncre = new CreateAction();
-        //IMenu buy = new BuyAction();
+        IMenu buy = new BuyAction();
         IMenu editA = new EditingAction();
         IMenu removeAct = new RemoveAction();
         IMenu listUserprint = new ListUser();
-        //IMenu listPurchase = new ListPurchase();
+        IMenu listPurchase = new ListPurchase();
         //IMenu sell = new SellPurchase();
         //IMenu save = new Save();
 
         switch (input){
-/*            case "save":
-                save.savefile(purchalist,userlist,action);
+            case"create purchase":
+                buy.Buy(action,userlist,purchalist);
+                help.helpManager(purchalist,userlist,action);
                 break;
-            case"sell purchase":
-                sell.sellPurchasemode(purchalist);
-                help.helpManager();
+            case"cp":
+                buy.Buy(action,userlist,purchalist);
+                help.helpManager(purchalist,userlist,action);
                 break;
-            case"remove action":
-                removeAct.removeAction(action,userlist,purchalist);
-                help.helpManager();
-                break;*/
+            case"list purchase":
+                listPurchase.helplistPurchase(purchalist);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"lp":
+                listPurchase.helplistPurchase(purchalist);
+                help.helpManager(purchalist,userlist,action);
+                break;
             case"remove action":
                 removeAct.removeAction(action,userlist,purchalist);
                 help.helpManager(purchalist,userlist,action);

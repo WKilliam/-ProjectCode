@@ -65,5 +65,15 @@ public class ListAction implements IMenu{
 
     }
 
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void Buy(ArrayList<ActionWallStreet> actionlist, ArrayList<User> userlist, ArrayList<Purchase> purchaseslist) {
+
+    }
+
 
 }

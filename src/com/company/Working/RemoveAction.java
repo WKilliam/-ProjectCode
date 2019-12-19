@@ -50,6 +50,16 @@ public class RemoveAction implements  IMenu{
 
     }
 
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
+    @Override
+    public void Buy(ArrayList<ActionWallStreet> actionlist, ArrayList<User> userlist, ArrayList<Purchase> purchaseslist) {
+
+    }
+
     public ActionWallStreet checklistAction(ArrayList<ActionWallStreet>action,String valueselect) throws Exception {
 
         for (int i = 0; i < action.size(); i++) {

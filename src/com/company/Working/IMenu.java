@@ -80,4 +80,19 @@ public interface IMenu {
      * @param purchase list purchase
      */
     public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) throws Exception;
+
+    /**
+     * print list purchase and all characteristic
+     * @param purchases purchase list
+     */
+    public void helplistPurchase(ArrayList<Purchase> purchases);
+
+    /**
+     * create purchase menu
+     * @param actionlist action list
+     * @param userlist user list
+     * @param purchaseslist purchase list
+     */
+
+    public void Buy(ArrayList<ActionWallStreet> actionlist, ArrayList<User> userlist, ArrayList<Purchase> purchaseslist);
 }

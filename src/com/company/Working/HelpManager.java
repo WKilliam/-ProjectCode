@@ -119,6 +119,11 @@ public class HelpManager implements IMenu {
 
     }
 
+    @Override
+    public void helplistPurchase(ArrayList<Purchase> purchases) {
+
+    }
+
 
     /**
      * Print characteristic Action Editing
