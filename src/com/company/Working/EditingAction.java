@@ -154,6 +154,11 @@ public class EditingAction implements IMenu {
         throw new Exception("User existed");
     }
 
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
+
+    }
+
     public ActionWallStreet checklistAction(ArrayList<ActionWallStreet>action,String valueselect) throws Exception {
 
         for (int i = 0; i < action.size(); i++) {

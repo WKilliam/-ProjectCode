@@ -180,6 +180,11 @@ public class EditingUser implements IMenu {
         return null;
     }
 
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
+
+    }
+
 
     @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {

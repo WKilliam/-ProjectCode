@@ -120,57 +120,8 @@ public class RemoveUser implements IMenu {
         throw new Exception("User existed");
     }
 
+    @Override
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) {
 
-
-
-
-/*
-        boolean exit = true;
-        do{
-            try {
-                if(list.size()==0){
-                    System.out.println(" SORRY YOU DON'T HAVE USER !!!");
-                    throw new Exception();
-                }
-                System.out.println("NAME REMOVE ?");
-                System.out.println("Please select the name and first name in this format"
-                        + "\n" + "name_surname");
-                Scanner sc = new Scanner(System.in);
-                String s = sc.nextLine();
-                String test[] = s.split(",");
-                ArrayList<String> listedemot = new ArrayList<>();
-
-                int length = test.length;
-                if (test.length != 2) {
-                    System.out.println("YOU HAVE INPUT MORE VALUE IS POSSIBLE ");
-                    throw new Exception();
-                } else {
-
-                    for (int i = 0; i < length; i++) {
-                        listedemot.add(test[i]);
-                    }
-                    String namevalue = listedemot.get(0);
-                    String surnamevalue = listedemot.get(1);
-                    for (int i = 0; i < list.size(); i++) {
-                        if (list.get(i).getName().equals(namevalue) && list.get(i).getSurname().equals(surnamevalue)) {
-                            if(list.get(i).getActionHas().size()==0) {
-                                System.out.println(list.get(i).getName() + " " + list.get(i).getSurname() + " is delete ");
-                                list.remove(i);
-
-                            }else{
-                                System.out.println("SORRY YOUR USER SELECTED HAVE PURCHASE ACTION ACTIVATE ");
-                                throw new Exception();
-                            }
-                        } else {
-                            System.out.println(" his user not existed in data base");
-                            throw new Exception();
-                        }
-                    }
-                }
-            }catch (Exception e){
-                System.out.println("INVALID INPUT ");
-            }
-        }while (exit == true);
-
-    }*/
+    }
 }

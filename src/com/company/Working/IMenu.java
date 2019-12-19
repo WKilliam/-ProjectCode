@@ -72,4 +72,12 @@ public interface IMenu {
      * @throws Exception
      */
     public User ckeckuserlist(ArrayList<User> list, String name, String surname) throws Exception;
+
+    /**
+     * remove action
+     * @param action list action
+     * @param user list user
+     * @param purchase list purchase
+     */
+    public void removeAction(ArrayList<ActionWallStreet> action, ArrayList<User> user, ArrayList<Purchase> purchase) throws Exception;
 }

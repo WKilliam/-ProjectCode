@@ -39,7 +39,7 @@ public class FunctionalManager {
         IMenu actioncre = new CreateAction();
         //IMenu buy = new BuyAction();
         IMenu editA = new EditingAction();
-        //IMenu removeAct = new RemoveAction();
+        IMenu removeAct = new RemoveAction();
         IMenu listUserprint = new ListUser();
         //IMenu listPurchase = new ListPurchase();
         //IMenu sell = new SellPurchase();
@@ -56,14 +56,15 @@ public class FunctionalManager {
             case"remove action":
                 removeAct.removeAction(action,userlist,purchalist);
                 help.helpManager();
-                break;
-            case"Editing action":
-                editA.editingAction(action);
-                help.helpManager();
-                break;
-            case"list purchase":
-                listPurchase.helplistPurchase(purchalist);
                 break;*/
+            case"remove action":
+                removeAct.removeAction(action,userlist,purchalist);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"ra":
+                removeAct.removeAction(action,userlist,purchalist);
+                help.helpManager(purchalist,userlist,action);
+                break;
             case"editing action":
                 editA.editingAction(action,purchalist,userlist);
                 help.helpManager(purchalist,userlist,action);
