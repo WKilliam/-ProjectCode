@@ -62,6 +62,13 @@ public class BuyAction implements IMenu {
 
     }
 
+    /**
+     * this function create purchase
+     * @param actionlist action list
+     * @param userlist user list
+     * @param purchaseslist purchase list
+     */
+
     public void Buy(ArrayList<ActionWallStreet> actionlist, ArrayList<User> userlist, ArrayList<Purchase> purchaseslist) {
 
         IClone clone = new CloneFunction();
@@ -96,7 +103,7 @@ public class BuyAction implements IMenu {
                 User checkuser = checkuser(userlist, name, surname);
                 ActionWallStreet actionWallStreet = checkAction(actionlist, id);
                 Purchase chechpurchase = chechpurchase(purchaseslist, name, surname, id, checkuser, actionWallStreet);
-                purchaseslist.add(chechpurchase);
+
             } catch (Exception e) {
                 System.out.println(e.getMessage());
             }
@@ -113,6 +120,22 @@ public class BuyAction implements IMenu {
         } while (exit == true) ;
     }
 
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
+
+    }
+
+    /**
+     * check purchase list for catch exception and create purchase
+     * @param purchases list purchase
+     * @param name name value cheking
+     * @param surname surname value checking
+     * @param id id value checking
+     * @param user user value take
+     * @param actionWallStreet action value take
+     * @return
+     * @throws Exception
+     */
 
     public Purchase chechpurchase(ArrayList<Purchase> purchases,String name,String surname ,String id,User user,ActionWallStreet actionWallStreet) throws Exception {
 
@@ -125,14 +148,26 @@ public class BuyAction implements IMenu {
             if(purchasen.getAction().getiDlocalization().equals(id)&&purchasen.getBuyOrSell().equals("Object Buy")){
                 throw new Exception("this action is in marcket wait sell");
             }
+            if(purchasen.getAction().getiDlocalization().equals(id)&&purchasen.getBuyOrSell().equals("Object Sold")&&purchasen.getUserName().equals("sold")&&purchasen.getUserSURname().equals("sold")){
+                int day = 1+(int) (Math.random() * 31);
+                int month = 1+(int) (Math.random() * 12);
+                int year = 1+(int) (Math.random() * 999999);
+                purchases.remove(purchasen);
+                purchasen.setAllStatus(user,actionWallStreet,name,surname,year,month,day,purchasen.getDatebuyday(),purchasen.getDatebuymouth(),purchasen.getDatebuyyear(),purchasen.getNamepurchase(),purchasen.getIdAction(),purchasen.getBuyOrSell());
+
+                break;
+            }
+
         }
-        int day = (int) (Math.random() * 31);
-        int month = (int) (Math.random() * 12);
-        int year = (int) (Math.random() * 999999);
+        int day = 1+(int) (Math.random() * 31);
+        int month = 1+(int) (Math.random() * 12);
+        int year = 1+(int) (Math.random() * 999999);
         Purchase purch = new Purchase(user,actionWallStreet,year,day,month);
+        purchases.add(purch);
         System.out.println("This purchase "+purch.getNamepurchase()+" - "+purch.getIdAction()+" - "+purch.getIdAction());
         return purch;
     }
+
 
     /**
      * check user list
@@ -142,6 +177,7 @@ public class BuyAction implements IMenu {
      * @return
      * @throws Exception
      */
+
     public User checkuser(ArrayList<User>users, String name, String surname) throws Exception {
 
         int size = users.size();
@@ -162,6 +198,7 @@ public class BuyAction implements IMenu {
      * @return
      * @throws Exception
      */
+
     public ActionWallStreet checkAction (ArrayList<ActionWallStreet>actionWallStreets,String s) throws Exception {
 
         for (int i = 0; i < actionWallStreets.size(); i++) {
@@ -170,5 +207,8 @@ public class BuyAction implements IMenu {
             }
         }
         throw new Exception("This Action isn't existed ");
+    }
+    public void changesendnull(ArrayList<Purchase>purchases){
+
     }
 }

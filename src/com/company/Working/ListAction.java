@@ -75,5 +75,8 @@ public class ListAction implements IMenu{
 
     }
 
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
 
+    }
 }

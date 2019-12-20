@@ -26,9 +26,6 @@ public class ListPurchase implements IMenu{
             if(purchase.getAction().getPriceClose()==-1){
                 System.out.println("For Purchase don't have sell value");
             }
-
-
-
         }
     }
 
@@ -36,6 +33,13 @@ public class ListPurchase implements IMenu{
     public void Buy(ArrayList<ActionWallStreet> actionlist, ArrayList<User> userlist, ArrayList<Purchase> purchaseslist) {
 
     }
+
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
+
+    }
+
+
 
     @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {

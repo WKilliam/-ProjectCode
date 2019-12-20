@@ -19,7 +19,7 @@ public class ActionWallStreet {
 
         this.actionW=actionW;
         this.priceOpen=price;
-        this.priceClose = -1;
+        this.priceClose = 0;
         this.iDlocalization=iDlocalization;
         this.take="Object Buy";//"Buy";
 

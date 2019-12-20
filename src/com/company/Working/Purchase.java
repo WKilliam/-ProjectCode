@@ -17,6 +17,8 @@ public class Purchase {
     private String namepurchase;
     private String idAction;
     private String buyOrSell;
+    private Integer priceO;
+    private Integer priceC;
 
     /**
      * This object corresponds to the characteristic of a user
@@ -26,11 +28,12 @@ public class Purchase {
      * @param datebuyday characteristic day date
      * @param datebuymouth characteristic month date
      */
-    public Purchase(User user,ActionWallStreet action,Integer datebuyyear,Integer datebuyday,Integer datebuymouth)  {
+    Purchase(User user, ActionWallStreet action, Integer datebuyyear, Integer datebuyday, Integer datebuymouth)  {
 
 
         this.action=action;
-
+        this.priceO=action.getPriceOpen();
+        this.priceO=action.getPriceClose();
         this.datebuyday = datebuyday;
         this.datebuymouth = datebuymouth;
         this.datebuymouth=datebuymouth;
@@ -53,6 +56,38 @@ public class Purchase {
 
     public String getBuyOrSell() {
         return buyOrSell;
+    }
+    public void setAllStatus(User user,ActionWallStreet action,String userName,String userSURname,Integer datebuyyear,Integer datebuymouth,Integer datebuyday,Integer datesellday,Integer datesellmonth,Integer datesellyear,String namepurchase,String idAction,String buyOrSell){
+         this.user=user;
+         this.action=action;
+         this.userName=userName;
+         this.userSURname=userSURname;
+         this.datebuyyear=datebuyyear;
+         this.datebuymouth=datebuymouth;
+         this.datebuyday=datebuyday;
+         this.datesellday=datesellday;
+         this.datesellmonth=datesellmonth;
+         this.datesellyear=datesellyear;
+         this.namepurchase=namepurchase;
+         this.idAction=idAction;
+         this.buyOrSell="Object Sold";
+
+    }
+
+    public Integer getPriceC() {
+        return priceC;
+    }
+
+    public Integer getPriceO() {
+        return priceO;
+    }
+
+    public void setPriceC(Integer priceC) {
+        this.priceC = priceC;
+    }
+
+    public void setPriceO(Integer priceO) {
+        this.priceO = priceO;
     }
 
     public void setBuyOrSell(String buyOrSell) {

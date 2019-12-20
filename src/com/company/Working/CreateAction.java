@@ -93,6 +93,11 @@ public class CreateAction implements IMenu{
     }
 
     @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
+
+    }
+
+    @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {
 
     }

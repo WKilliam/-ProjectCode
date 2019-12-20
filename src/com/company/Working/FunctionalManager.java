@@ -42,10 +42,18 @@ public class FunctionalManager {
         IMenu removeAct = new RemoveAction();
         IMenu listUserprint = new ListUser();
         IMenu listPurchase = new ListPurchase();
-        //IMenu sell = new SellPurchase();
+        IMenu sell = new SellPurchase();
         //IMenu save = new Save();
 
         switch (input){
+            case"sell purchase":
+                sell.sellPurchasemode(purchalist,userlist,action);
+                help.helpManager(purchalist,userlist,action);
+                break;
+            case"sp":
+                sell.sellPurchasemode(purchalist,userlist,action);
+                help.helpManager(purchalist,userlist,action);
+                break;
             case"create purchase":
                 buy.Buy(action,userlist,purchalist);
                 help.helpManager(purchalist,userlist,action);

@@ -134,4 +134,10 @@ public class RemoveUser implements IMenu {
     public void Buy(ArrayList<ActionWallStreet> actionlist, ArrayList<User> userlist, ArrayList<Purchase> purchaseslist) {
 
     }
+
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
+
+    }
+
 }

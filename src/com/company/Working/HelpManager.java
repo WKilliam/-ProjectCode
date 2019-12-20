@@ -28,6 +28,12 @@ public class HelpManager implements IMenu {
         System.out.println("NAMEUSER,SURNAME,IDACTION  ");
     }
 
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
+
+    }
+
+
     /**
      * Add new purchase
      * @param purchases list purchase

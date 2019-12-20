@@ -169,6 +169,11 @@ public class EditingAction implements IMenu {
 
     }
 
+    @Override
+    public void sellPurchasemode(ArrayList<Purchase> purchaseslist, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws Exception {
+
+    }
+
     public ActionWallStreet checklistAction(ArrayList<ActionWallStreet>action,String valueselect) throws Exception {
 
         for (int i = 0; i < action.size(); i++) {
