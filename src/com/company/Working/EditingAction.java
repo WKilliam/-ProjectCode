@@ -74,6 +74,7 @@ public class EditingAction implements IMenu {
                 String iDtake = changelist.get(1);
                 String priceopen = changelist.get(2);
                 String priceclose = changelist.get(3);
+                checknullaction(listaction,iDtake);
                 try{
                     int testN = Integer.parseInt(priceclose);
                     int testN1 = Integer.parseInt(priceopen);
@@ -140,6 +141,16 @@ public class EditingAction implements IMenu {
 
     @Override
     public void listeActionPrint(ArrayList<ActionWallStreet> action) {
+
+    }
+
+    public void checknullaction(ArrayList<ActionWallStreet>action,String valueselect) throws Exception {
+        for (int i = 0; i < action.size(); i++) {
+            if (action.get(i).getiDlocalization().equals(valueselect)) {
+                throw new Exception("This Action id is existed ");
+            }
+        }
+
 
     }
 

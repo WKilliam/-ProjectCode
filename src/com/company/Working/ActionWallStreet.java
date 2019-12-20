@@ -25,6 +25,7 @@ public class ActionWallStreet {
 
     }
 
+
     public String getTake() {
         return take;
     }

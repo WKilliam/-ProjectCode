@@ -37,9 +37,10 @@ public class Save implements IMenu,Serializable{
                 try(FileInputStream fileInputStream = new FileInputStream("data.bin");
                     ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);) {
                 Seriliz seriliz = (Seriliz) inputStream.readObject();
-                purchases=seriliz.getPurchases();
-                user=seriliz.getUsers();
-                actionWallStreets=seriliz.getActionWallStreets();
+                    System.out.println(seriliz.getActionWallStreets());
+                //purchases=seriliz.getPurchases();
+                //user=seriliz.getUsers();
+                //actionWallStreets=seriliz.getActionWallStreets();
 
                 }catch (Exception e){
                     System.out.println(e.getMessage());

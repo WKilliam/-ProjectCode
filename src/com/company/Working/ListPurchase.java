@@ -25,7 +25,9 @@ public class ListPurchase implements IMenu{
             System.out.println("NAMEID ACTION BUY PURCHASE   : "+purchase.getAction().getiDlocalization());
             System.out.println("PRICE ACTION BUY PURCHASE  : "+purchase.getAction().getPriceOpen());
             System.out.println("DATE BUY ACTION BUY PURCHASE  : "+datebuyday+"/"+datebuymouth+"/"+datebuyyear+"/");
-            if(purchase.getAction().getPriceClose()==-1){
+            if(purchase.getAction().getTake().equals("Object Buy")){
+                System.out.println("Purchase : "+purchase.getNamepurchase());
+            }else {
                 System.out.println("For Purchase don't have sell value");
             }
         }
