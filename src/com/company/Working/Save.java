@@ -5,67 +5,46 @@ import java.io.*;
 import java.util.ArrayList;
 import java.util.Map;
 
-public class Save implements IMenu{
+public class Save implements IMenu,Serializable{
 
-    public void GestionFileFilter(ArrayList<Purchase>purchases,ArrayList<User> user,ArrayList<ActionWallStreet>actionWallStreets) throws IOException {
+    public void GestionFileFilter(ArrayList<Purchase>purchases,ArrayList<User> user,ArrayList<ActionWallStreet>actionWallStreets) {
 
         //this absolute path
 
-        File fileDosFilt = new File("src/com.company/Working/Data/");
 
+       // File fileDosFilt = new File("src/com.company/Working/Data/");
+
+        Seriliz neSeri = new Seriliz(purchases,user,actionWallStreets);
         // check the existence of the final discovery
 
-        if(!fileDosFilt.exists()){
-            // create directory
-            fileDosFilt.mkdirs();
 
-            FileOutputStream fos = new FileOutputStream("src/com.company/Working/Data/data.txt");
+            try(FileOutputStream fos = new FileOutputStream("data.bin");
+                ObjectOutputStream outputStream=new ObjectOutputStream(fos);){
 
-            Seriliz neSeri = new Seriliz(purchases,user,actionWallStreets);
+                outputStream.writeObject(neSeri);
 
-            ObjectOutputStream outputStream=new ObjectOutputStream(fos);
+            }catch (IOException e){
+                System.out.println(e.fillInStackTrace());
+            }
 
-            outputStream.writeObject(neSeri);
-            outputStream.close();
-
-        }else {
-            FileOutputStream fos = new FileOutputStream("src/com.company/Working/Data/data.txt");
-
-            Seriliz neSeri = new Seriliz(purchases,user,actionWallStreets);
-
-            ObjectOutputStream outputStream=new ObjectOutputStream(fos);
-
-            outputStream.writeObject(neSeri);
-            outputStream.close();
-        }
     }
 
     public void GestionFiledseri(ArrayList<Purchase>purchases,ArrayList<User> user,ArrayList<ActionWallStreet>actionWallStreets) {
 
-        try {
-            File fileDosFilt = new File("src/com.company/Working/Data/");
 
-            if (!fileDosFilt.exists()) {
-                System.out.println("Your have not disrectory save ");
-            }else {
 
-                FileInputStream fileInputStream = new FileInputStream("src/com.company/Working/Data/data.txt");
-                ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);
 
+                try(FileInputStream fileInputStream = new FileInputStream("data.bin");
+                    ObjectInputStream inputStream = new ObjectInputStream(fileInputStream);) {
                 Seriliz seriliz = (Seriliz) inputStream.readObject();
+                purchases=seriliz.getPurchases();
+                user=seriliz.getUsers();
+                actionWallStreets=seriliz.getActionWallStreets();
 
-                ArrayList list = seriliz.getMap().get("Purchase");
-                list=purchases;
-                ArrayList list1 = seriliz.getMap().get("User");
-                list1=user;
-                ArrayList list2 = seriliz.getMap().get("Action");
-                list2=actionWallStreets;
+                }catch (Exception e){
+                    System.out.println(e.getMessage());
+                }
 
-                inputStream.close();
-            }
-        }catch (Exception e){
-            System.out.println(e.getMessage());
-        }
 
 
 

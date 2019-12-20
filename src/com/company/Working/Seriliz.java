@@ -8,19 +8,31 @@ import java.util.Map;
 
 public class Seriliz implements Serializable {
 
-    private HashMap<String, ArrayList> map ;
-
+    private ArrayList<Purchase> purchases =new ArrayList<>();
+    private ArrayList<User> users=new ArrayList<>();
+    private ArrayList<ActionWallStreet>actionWallStreets=new ArrayList<>();
 
     public Seriliz(ArrayList<Purchase> purchases , ArrayList<User> user, ArrayList<ActionWallStreet> action){
 
-        this.map = new HashMap<String, ArrayList>();
-        this.map.put("Purchase",purchases);
-        this.map.put("User",user);
-        this.map.put("Action",action);
+        this.purchases =new ArrayList<>();
+        this.users=new ArrayList<>();
+        this.actionWallStreets=new ArrayList<>();
+
+        this.purchases=purchases;
+        this.actionWallStreets=action;
+        this.users=user;
 
     }
 
-    public Map<String, ArrayList> getMap() {
-        return map;
+    public ArrayList<ActionWallStreet> getActionWallStreets() {
+        return actionWallStreets;
+    }
+
+    public ArrayList<Purchase> getPurchases() {
+        return purchases;
+    }
+
+    public ArrayList<User> getUsers() {
+        return users;
     }
 }
