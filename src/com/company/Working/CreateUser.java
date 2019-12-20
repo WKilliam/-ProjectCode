@@ -1,6 +1,8 @@
 package com.company.Working;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 
@@ -133,6 +135,15 @@ public class CreateUser implements IMenu{
 
     }
 
+    @Override
+    public void GestionFileFilter(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws IOException {
+
+    }
+
+    @Override
+    public void GestionFiledseri(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) {
+
+    }
 
     @Override
     public void helpManager(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> action) {

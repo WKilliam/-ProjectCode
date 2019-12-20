@@ -1,5 +1,6 @@
 package com.company.Working;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class FunctionalManager {
@@ -46,6 +47,14 @@ public class FunctionalManager {
         //IMenu save = new Save();
 
         switch (input){
+            case"load":
+                IMenu file2 = new Save();
+                file2.GestionFiledseri(purchalist,userlist,action);
+                break;
+            case"save":
+                IMenu file = new Save();
+                file.GestionFileFilter(purchalist,userlist,action);
+                break;
             case"sell purchase":
                 sell.sellPurchasemode(purchalist,userlist,action);
                 help.helpManager(purchalist,userlist,action);

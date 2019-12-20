@@ -8,14 +8,19 @@ import java.util.Map;
 
 public class Seriliz implements Serializable {
 
-    private Map<String,ArrayList> map = new HashMap();
+    private HashMap<String, ArrayList> map ;
 
 
     public Seriliz(ArrayList<Purchase> purchases , ArrayList<User> user, ArrayList<ActionWallStreet> action){
 
-        this.map.put("PURCHASE",purchases);
-        this.map.put("USER",user);
-        this.map.put("ACTION",action);
+        this.map = new HashMap<String, ArrayList>();
+        this.map.put("Purchase",purchases);
+        this.map.put("User",user);
+        this.map.put("Action",action);
+
     }
 
+    public Map<String, ArrayList> getMap() {
+        return map;
+    }
 }

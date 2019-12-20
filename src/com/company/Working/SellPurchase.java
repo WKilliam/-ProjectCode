@@ -3,6 +3,7 @@ package com.company.Working;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.Scanner;
 
 public class SellPurchase implements IMenu {
@@ -93,6 +94,18 @@ public class SellPurchase implements IMenu {
             }
         }while (exit==true);
     }
+
+    @Override
+    public void GestionFileFilter(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws IOException {
+
+    }
+
+    @Override
+    public void GestionFiledseri(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) {
+
+    }
+
+
     public ActionWallStreet checkAc(ArrayList<ActionWallStreet>actionWallStreets,String id) throws Exception {
         for (int i = 0; i < actionWallStreets.size(); i++) {
             if (actionWallStreets.get(i).getiDlocalization().equals(id)) {

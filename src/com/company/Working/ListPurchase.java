@@ -1,6 +1,8 @@
 package com.company.Working;
 
+import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Map;
 
 public class ListPurchase implements IMenu{
 
@@ -39,6 +41,15 @@ public class ListPurchase implements IMenu{
 
     }
 
+    @Override
+    public void GestionFileFilter(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) throws IOException {
+
+    }
+
+    @Override
+    public void GestionFiledseri(ArrayList<Purchase> purchases, ArrayList<User> user, ArrayList<ActionWallStreet> actionWallStreets) {
+
+    }
 
 
     @Override

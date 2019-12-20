@@ -9,6 +9,10 @@ public class Main {
     public static void main(String[] args) throws Exception{
 
 
+
+
+
+
         ArrayList<ActionWallStreet>  listeAction = new ArrayList<>();
 
 
@@ -31,6 +35,7 @@ public class Main {
 
 
         while (true){
+
             Scanner sc = new Scanner(System.in);
             String input = sc.nextLine();
             FunctionalManager test = new FunctionalManager();
